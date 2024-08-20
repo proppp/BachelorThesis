@@ -1,0 +1,25 @@
+\null
+\vspace{2\baselineskip}
+\noindent
+\tAuthor \\
+\vspace{2\baselineskip}
+\noindent \\
+\tTitle \\
+\vspace{2\baselineskip}
+\noindent \\
+Universität Leipzig, Dissertation \\
+\vspace{2\baselineskip}
+
+%% Registriere verschieden Zähler
+\regtotcounter{page}
+\regtotcounter{totalfigures}
+\regtotcounter{table}
+\regtotcounter{totalappendix}
+
+\noindent
+\HideIfZero{page}{\total{page}~pages, }%
+\HideIfZero{citenum}{\total{citenum}~citations, }%
+\HideIfZero{totalfigures}{\total{totalfigures}~figures, }%
+\HideIfZero{table}{\total{table}~tables, }%
+\HideIfZero{totalappendix}{\total{totalappendix}~attachments}%
+\vspace{5\baselineskip}

@@ -1,0 +1,187 @@
+\chapter{Introduction}
+
+In bulk polymers, physical properties such as heat capacity, thermal expansion coefficient, dielectric permittivity, and refractive index are well-defined and uniform. Studies of the glass transition in bulk polymers typically involve measuring changes in these parameters as a function of time or temperature. However, when polymers are confined to thin films, the situation changes significantly. The glassy dynamics near the interfaces alter, leading to variations in properties like dielectric permittivity, thermal expansion, heat capacity, and refractive index within the film. Unlike bulk materials, thin polymer films exhibit a heterogeneous response due to the complex interplay of these local variations. Consequently, measurements on thin films reflect a collective response that averages multiple local contributions.
+
+The present work aims to illustrate how these contributions combine to produce the overall dielectric response of thin polymer films, particularly through broadband dielectric spectroscopy. The focus will be on two polymers in particular, namely Poly-TPD, studied for its superior charge transport properties in organic electronics, and P-Bisphenol, valued for its high thermal stability and mechanical strength in engineering applications.
+\chapter{Theoretical Background}
+\section{Basic Concepts}
+\subsection{Maxwell's Equations}
+
+Maxwell's equations are the fundamental equations that describe the behavior of electric and magnetic fields. These equations form the foundation of classical electromagnetism, describing how electric charges and currents produce electric and magnetic fields, as well as how those fields interact with each other and with matter. The four Maxwell's equations are:
+
+\begin{enumerate}
+    \item \textbf{Gauss's Law for Electricity:}
+    \begin{equation}
+    \nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}
+    \end{equation}
+
+    \item \textbf{Gauss's Law for Magnetism:}
+    \begin{equation}
+    \nabla \cdot \mathbf{B} = 0
+    \end{equation}
+
+    \item \textbf{Faraday's Law of Induction:}
+    \begin{equation}
+    \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
+    \end{equation}
+
+    \item \textbf{Ampère's Law (with Maxwell's correction):}
+    \begin{equation}
+    \nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}
+    \end{equation}
+\end{enumerate}
+
+\subsection{Electric Displacement Field}
+
+
+The electric displacement field \( \mathbf{D} \) relates to the electric field \( \mathbf{E} \) and the polarization \( \mathbf{P} \) within a medium. It accounts for both free and bound charges in the material and is defined by the equation:
+
+\[
+	\mathbf{D} = \epsilon_0 \mathbf{E} + \mathbf{P} = \epsilon_0 \boldsymbol{\epsilon} \mathbf{E}
+\]
+
+where \( \epsilon_0 \) is the permittivity of free space, \( \mathbf{E} \) is the electric field, \( \mathbf{P} \) is the polarization vector (i.e. dipole moment per unit volume of the material), and \( \boldsymbol{\epsilon} \) represents the dielectric function (DF) %todo add abbreviation
+and is generally a tensor of rank 2 because of the non-required collinearity between \( \mathbf{D} \) and \( \mathbf{E} \). %todo cite grundmann on this
+
+Maxwell's equations in the presence of a dielectric medium can then be expressed in terms of \( \mathbf{D} \). The relevant Maxwell equation in this form is Gauss's law:
+
+\[
+\nabla \cdot \mathbf{D} = \rho_{\text{free}}
+\]
+
+where \( \rho_{\text{free}} \) is the free charge density.
+
+The importance of the electric displacement field \( \mathbf{D} \) arises when considering the dielectric function \( \epsilon \). The dielectric function relates \( \mathbf{D} \), \( \mathbf{E} \), and \( \mathbf{P} \) as follows:
+
+\[
+\mathbf{D} = \epsilon_0 \epsilon \mathbf{E}
+\]
+
+In this context, the dielectric function \( \epsilon \) is generally a second-rank tensor because \( \mathbf{D} \) and \( \mathbf{E} \) may not be collinear. The dielectric function is crucial for understanding the material's response to an electric field and plays a key role in determining the material's behavior in dielectric spectroscopy and other electromagnetic analyses.
+
+\subsection{Complex Dielectric Function}
+\subsection{Dielectric Relaxation}
+\section{Broadband Dielectric Spectroscopy}
+\section{Thin Films}
+\subsection{Introduction to Thin Films}
+\subsection{Electrical Properties of Thin Films}
+\subsection{Ohmic Conductivity in Thin Films}
+\subsection{Havriliak-Negami Function}
+
+\chapter{Methods}
+
+\section{Preparation of the samples}
+
+The preparation of the samples required for our analysis involves creating parallel-plate capacitors on a glass substrate. These capacitors have an area of approximately \( 6 \times 6 \, \text{mm} \) and a thickness that varies from around \( 300 \, \text{nm} \) to \( 5 \, \text{nm} \).
+
+Controlling the thickness of the dielectric material %-- specifically, the polymer
+within the capacitor is particularly important, as our goal is to study the effects of thin layers compared to the bulk material. This control is achieved by preparing polymer solutions with different concentrations: the higher the concentration, the thicker the resulting film.
+\subsection{Solution Preparation}
+
+In particular, 7 solutions were prepeared for each of the polymers starting from a concentration of $20 \text{mg/ml}$ %todo
+and roughly halvened.
+The solvent used for Poly-TPD was Chloroform, while Poly-Bisphenol was diluted in Dichloromethane.
+
+As an example, to compute the volume required to dilute a solution from an initial concentration of \( 20 \, \text{mg/ml} \) to a desired concentration of \( 10 \, \text{mg/ml} \), with a final volume of \( 10 \, \text{ml} \), we use the dilution formula:
+\[
+C_1 V_1 = C_2 V_2
+\]
+where:
+\[
+C_1 = 20 \, \text{mg/ml} \quad \text{(initial concentration)}
+\]
+\[
+C_2 = 10 \, \text{mg/ml} \quad \text{(desired concentration)}
+\]
+\[
+V_1 = \text{unknown volume (to be calculated)}
+\]
+\[
+V_2 = 10 \, \text{ml} \quad \text{(final volume)}
+\]
+Substituting the known values:
+\[
+20 \, \text{mg/ml} \times V_1 = 10 \, \text{mg/ml} \times 10 \, \text{ml}
+\]
+Solving for \( V_1 \):
+\[
+V_1 = \frac{10 \, \text{mg/ml} \times 10 \, \text{ml}}{20 \, \text{mg/ml}} = \frac{100}{20} = 5 \, \text{ml}
+\]
+Thus, to achieve a concentration of \( 10 \, \text{mg/ml} \) from an initial concentration of \( 20 \, \text{mg/ml} \), \( 5 \, \text{ml} \) of the original solution diluted with \( 5 \, \text{ml} \) of solvent are needed for a final volume of \( 10 \, \text{ml} \).
+
+This was done similarly for all other solutions, and the resulting concentrations are shown in Table \ref{tab:solution-concentrations}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+	\caption{Concentrations and volumes of both sets of solutions (Poly-TPD and P-Bisphenol)}
+\label{tab:solution-concentrations}
+\begin{center}
+\begin{tabular}{@{}ccc@{}}
+\toprule
+C (mg/ml) & $V_{solution}$ & $V_{solvent}$ \\ \midrule
+10                    & 5           & 5          \\ \midrule
+3                     & 3           & 7          \\ \midrule
+1                     & 3           & 6          \\ \midrule
+0.5                   & 4           & 4          \\ \midrule
+0.2                   & 4           & 6          \\ \midrule
+1                     & 5           & 5          \\ \bottomrule
+\end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Preparation of the Substrate}
+
+The glass substrates were prepared by cutting standard microscope slides into approximately $1 \times 1 \, \text{cm}$ squares, followed by cleaning in an ultrasonic cleaner using ethanol and deionized water. This cleaning process ensures a contaminant-free surface for the deposition of polymer solutions. After cleaning, the substrates were dried using pressurized $\text{N}_2$ in a laminar flow hood to avoid dust contamination and then stored in a Petri dish.
+
+Once the substrates were prepared, the next step was to create the first of the two plates of the capacitors. This was accomplished by depositing gaseous aluminum in approximately $5 \, \text{mm}$ wide strips across the substrate. Specifically, to produce a total of 9 capacitors, three equally spaced strips of aluminum were deposited. This was done using a complementary mask, which covered all areas of the substrate except for where the strips were intended to be, ensuring that the evaporated aluminum only adhered to the exposed glass surface.
+
+The thermal evaporation process used for this deposition is relatively straightforward. It involves melting a small quantity of aluminum (in our case, taken from tiny cut wire) in a turbomolecular-pump vacuum chamber by heating a tungsten base with a high current. This results in the desired evaporation of the metal and its subsequent surface accumulation. The thickness of this accumulation can be controlled by adjusting the duration of the current applied to the tungsten base. In our case, just a few seconds of heating produced an aluminum layer approximately 200 nm thick.
+\subsection{Spin-Coating of the Solution}
+
+Once the first of the two aluminum capacitor plates is deposited on the glass substrate, the next step is to apply the dielectric material between the plates. This is achieved by depositing the respective polymer solution onto the plate. The spin-coating technique is particularly useful in this case, as it ensures a uniform distribution of the solution across the glass layer.
+
+In our procedure, a spin-coating program of 1 minute at 4000 rpm was used for all polymer solutions to ensure reproducibility.
+
+Moreover, the glass slides were marked appropriately to allow for distinction of polymer and concentration at a later time.
+
+\subsection{Heating and Annealing}
+
+After spin-coating the solution, the samples were placed in a small glass container, which was then evacuated to remove any trapped air or moisture. The container was subsequently placed inside an oven set to $200 \degree \text{C}$ and maintained at this temperature for 12 hours to allow for annealing.
+
+Annealing is useful for improving the film's uniformity and adhesion to the substrate, enhancing its mechanical properties, and promoting the removal of residual solvents. It also helps in stabilizing the polymer film by allowing the polymer chains to rearrange and settle into a more stable configuration.
+
+
+After this process, aluminum was evaporated a second time in strips perpendicular to the earlier ones, completing the fabrication of the capacitors.
+
+
+\section{Atomic Force Microscopy}
+
+The use of Atomic Force Microscopy (AFM) is particularly useful when measuring the thickness of the dielectric in our samples. This measurement is essential due to the capacitance formula for a parallel-plate capacitor:
+
+\[
+C = \epsilon \frac{A}{d}
+\]
+
+where $\epsilon$ is the permittivity, $A$ is the surface area of the plate, and $d$ is its thickness. Since dielectric measurements rely on this formula, both $A$ and $d$ must be accurately determined. The former is a straightforward parameter to obtain, and in our case, it was measured using a simple optical microscope. %todo insert figure of the microscope.
+
+%todo explain how atomic force microscopy works, insert figure from wikipedia
+
+The measurement of the latter, however, is more challenging and cannot rely solely on the initial concentration of the spin-coated solution, as this would be overly imprecise and unreliable.
+
+To accurately determine the thickness, AFM is employed in the following manner:
+\begin{enumerate}
+    \item The surface of the sample is first scratched with a needle in a non-capacitor region (i.e., where no aluminum is present) as shown in the figure. This scratch allows for the measurement of the thickness of the deposited polymer layer. %todo insert figure
+    \item The scratched area is then positioned under the AFM tip, with approximately half of the scratched region occupying the field of view and the non-scratched region occupying the other half.
+    \item This setup allows for the measurement of the relative height between the substrate and the polymer film, which is then analyzed using Gwyddion, %insert reference?
+where a simple statistical average of the two heights can be calculated, providing a relatively accurate thickness of the dielectric.
+\end{enumerate}
+
+This process was repeated three or more times for each sample, and the resulting thicknesses were then averaged for each of the capacitors. The results of these measurements are presented below.
+
+\section{Dielectric Spectroscopy}
+Once we know the parameters of our samples, we can move to the actual dielectric spectroscopy measurements.
+This technique enables to measure the
+%instert how you connected the samples, ensuring the resistance across the aluminum, etc.
+
+\chapter{Results \& Discussion}

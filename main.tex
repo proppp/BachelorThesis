@@ -1,0 +1,74 @@
+
+\documentclass[a4paper]{book}
+
+\usepackage{geometry} % Title page needs its own margins.
+
+%\usepackage[english]{babel} % Hyphenation rules, date format, etc. in English
+\usepackage[main=english, ngerman]{babel}
+%\usepackage[german]{babel} % Hyphenation rules, date format, etc. in English
+\usepackage[T1,EU1]{fontenc}
+%\usepackage{fontspec}
+\usepackage{polyglossia}
+%\setmainlanguage[babelshorthands=true]{english}
+%\usepackage[T1]{fontenc}    % European character set (special characters, etc.)
+\usepackage[bitstream-charter]{mathdesign} % Modern, serif, and objective font
+%\usepackage[utf8]{inputenc} % UTF-8 input character set
+
+\usepackage{xstring}        % Test/compare (sub)strings
+
+\usepackage{totcount}       % Count page numbers, figures, etc.
+
+\usepackage{siunitx}        % SI units
+\usepackage{natbib}         % Scientific citations
+\usepackage[printonlyused]{acronym} % Abbreviations + abbreviation directory
+\usepackage{blindtext}      % Filler text for testing
+
+\usepackage{pdfpages}       % Include PDFs
+
+%% Custom Macros
+\input{config/config}
+\input{macros/InOderAm}
+\input{macros/HideIfZero}
+\input{macros/citenumCounter}
+\input{macros/totalfiguresCounter}
+\input{macros/totalappendixCounter}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{bm}
+%\usepackage{textcomp}
+
+\usepackage{gensymb}
+\begin{document}
+%% Document
+%\begin{document}
+
+%% Title Page
+\input{official/titelblatt_pretty}
+
+%% Line number for the table of contents, etc.
+\setcounter{page}{1}
+\pagenumbering{Roman}
+
+%% TOC
+\tableofcontents
+\newpage
+
+\pagenumbering{arabic}
+%% Bibliographic Description
+\input{content/head/bibliographische_beschreibung}
+\input{content/head/abkuerzungsverzeichnis}
+\newpage
+
+%% Main Part
+\input{content/main/main}
+
+%% Final Part
+
+%% Summary
+\input{content/tail/zusammenfassung}
+%% Bibliography
+\input{content/tail/literaturverzeichnis}
+%% Appendix
+\input{content/tail/appendix}
+
+\end{document}

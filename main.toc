@@ -1,0 +1,27 @@
+\selectlanguage *[]{latex}
+\selectlanguage *[]{latex}
+\contentsline {section}{\numberline {0.1}Bibliography}{1}{}%
+\contentsline {section}{\numberline {0.2}List of Abbreviations}{2}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{3}{}%
+\contentsline {chapter}{\numberline {2}Theoretical Background}{5}{}%
+\contentsline {section}{\numberline {2.1}Basic Concepts}{5}{}%
+\contentsline {subsection}{\numberline {2.1.1}Maxwell's Equations}{5}{}%
+\contentsline {subsection}{\numberline {2.1.2}Electric Displacement Field}{5}{}%
+\contentsline {subsection}{\numberline {2.1.3}Complex Dielectric Function}{6}{}%
+\contentsline {subsection}{\numberline {2.1.4}Dielectric Relaxation}{6}{}%
+\contentsline {section}{\numberline {2.2}Broadband Dielectric Spectroscopy}{6}{}%
+\contentsline {section}{\numberline {2.3}Thin Films}{6}{}%
+\contentsline {subsection}{\numberline {2.3.1}Introduction to Thin Films}{6}{}%
+\contentsline {subsection}{\numberline {2.3.2}Electrical Properties of Thin Films}{6}{}%
+\contentsline {subsection}{\numberline {2.3.3}Ohmic Conductivity in Thin Films}{6}{}%
+\contentsline {subsection}{\numberline {2.3.4}Havriliak-Negami Function}{6}{}%
+\contentsline {chapter}{\numberline {3}Methods}{7}{}%
+\contentsline {section}{\numberline {3.1}Preparation of the samples}{7}{}%
+\contentsline {subsection}{\numberline {3.1.1}Solution Preparation}{7}{}%
+\contentsline {subsection}{\numberline {3.1.2}Preparation of the Substrate}{8}{}%
+\contentsline {subsection}{\numberline {3.1.3}Spin-Coating of the Solution}{8}{}%
+\contentsline {subsection}{\numberline {3.1.4}Heating and Annealing}{9}{}%
+\contentsline {section}{\numberline {3.2}Atomic Force Microscopy}{9}{}%
+\contentsline {section}{\numberline {3.3}Dielectric Spectroscopy}{9}{}%
+\contentsline {chapter}{\numberline {4}Results \& Discussion}{11}{}%
+\contentsline {chapter}{\numberline {5}Synopse}{13}{}%
