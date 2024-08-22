@@ -7,7 +7,7 @@ The present work aims to illustrate how these contributions combine to produce t
 \section{Basic Concepts}
 \subsection{Maxwell's Equations}
 
-Maxwell's equations are the fundamental equations that describe the behavior of electric and magnetic fields. These equations form the foundation of classical electromagnetism, describing how electric charges and currents produce electric and magnetic fields, as well as how those fields interact with each other and with matter. The four Maxwell's equations are:
+Maxwell's equations form the foundation of classical electromagnetism, describing how electric charges and currents produce electric and magnetic fields, as well as how those fields interact with each other and with matter. The four Maxwell's equations are:
 
 \begin{enumerate}
     \item \textbf{Gauss's Law for Electricity:}
@@ -43,29 +43,137 @@ The electric displacement field \( \mathbf{D} \) relates to the electric field \
 where \( \epsilon_0 \) is the permittivity of free space, \( \mathbf{E} \) is the electric field, \( \mathbf{P} \) is the polarization vector (i.e. dipole moment per unit volume of the material), and \( \boldsymbol{\epsilon} \) represents the dielectric function (DF) %todo add abbreviation
 and is generally a tensor of rank 2 because of the non-required collinearity between \( \mathbf{D} \) and \( \mathbf{E} \). %todo cite grundmann on this
 
-Maxwell's equations in the presence of a dielectric medium can then be expressed in terms of \( \mathbf{D} \). The relevant Maxwell equation in this form is Gauss's law:
 
-\[
-\nabla \cdot \mathbf{D} = \rho_{\text{free}}
-\]
-
-where \( \rho_{\text{free}} \) is the free charge density.
-
-The importance of the electric displacement field \( \mathbf{D} \) arises when considering the dielectric function \( \epsilon \). The dielectric function relates \( \mathbf{D} \), \( \mathbf{E} \), and \( \mathbf{P} \) as follows:
-
-\[
-\mathbf{D} = \epsilon_0 \epsilon \mathbf{E}
-\]
-
-In this context, the dielectric function \( \epsilon \) is generally a second-rank tensor because \( \mathbf{D} \) and \( \mathbf{E} \) may not be collinear. The dielectric function is crucial for understanding the material's response to an electric field and plays a key role in determining the material's behavior in dielectric spectroscopy and other electromagnetic analyses.
 
 \subsection{Complex Dielectric Function}
 
 
-In most instances, \( \epsilon \) will be treated as a scalar (assuming an isotropic case). The dielectric function, \( \epsilon(\omega) \), varies with frequency due to the contributions of different oscillators and typically decreases in a non-monotonic manner from its static value (at \( \omega = 0 \)) to 1 as \( \omega \) approaches infinity. The dielectric function is primarily influenced by optical processes.
+In most instances though, \(\boldsymbol{ \epsilon }\) will be treated as a complex (scalar) function \( \epsilon^*(\omega) \), which varies with frequency due to the contributions of different oscillators in the analyzed materials. Namely it's given by: \[
+	\epsilon^* = \epsilon^\prime + i \epsilon^{\prime \prime}
+\]
+where the complex $\epsilon^{\prime \prime}$ and the real $\epsilon^\prime$ parts are related by the Kramers-Kronig relation. %todo appendix on kk relation.
 
 \subsection{Dielectric Relaxation}
-\section{Broadband Dielectric Spectroscopy}
+
+The dielectric relaxation theory for small electric field strengths is a specific application of linear response theory, applicable to isotropic systems. In this context, the time-dependent response \( y(t) \) of a system, following a disturbance \( x(t) \), is described by a linear equation. For dielectrics, the disturbance is the time-dependent external electric field \( x(t) = E(t) \), and the response is the polarization \( y(t) = P(t) \). This relationship is given by:
+
+\[
+P(t) = P_\infty + \epsilon_0 \int_{-\infty}^{t} \epsilon(t - t') \frac{dE(t')}{dt'} \, dt'
+\]
+
+where \( \epsilon(t) \) is the time-dependent dielectric function, and \( P_\infty \) includes all contributions from induced polarization. This equation relies on the principles of linearity (the system's response to multiple disturbances is the sum of individual responses) and causality (only past disturbances influence the response at time \( t \)).
+
+When a stationary periodic electric field \( E(t) = E_0 e^{-i\omega t} \) is applied, the equation transforms to:
+
+\[
+P(t, \omega) = \epsilon_0 \left(\epsilon^*(\omega) - 1\right) E(t, \omega)
+\]
+
+with the complex dielectric function defined as:
+
+\[
+\epsilon^*(\omega) = \epsilon'(\omega) - i\epsilon''(\omega)
+\]
+
+Here, \( \epsilon'(\omega) \) represents the energy stored in the system per period, and \( \epsilon''(\omega) \) corresponds to the energy dissipated per period. The relationship between the time-dependent dielectric function \( \epsilon(t) \) and the complex dielectric function \( \epsilon^*(\omega) \) is given by:
+
+\[
+\epsilon^*(\omega) = \epsilon_\infty - \int_{0}^{\infty} \frac{d\epsilon(t)}{dt} e^{-i\omega t} \, dt
+\]
+
+This expression is a one-sided Fourier or full imaginary Laplace transformation.
+
+\section{Modeling Functions}
+
+When we aim to analyze dielectric spectra, it all comes down to give physical models that give insight into the occurring phenomena. A simple, commonly-used approximation is the model of relaxation time. The most general way to understand it is that the time derivative of a quantity is proportional to the quantity itself. As an instance:
+\[
+\frac{dP(t)}{dt} = -\frac{P(t)}{\tau_D}
+\]
+
+where \( \tau_D \) is the characteristic relaxation time. Solving this equation yields an exponential decay for the correlation function \( \Phi(\tau) \):
+
+\[
+\Phi(\tau) = \exp\left(-\frac{\tau}{\tau_D}\right)
+\]
+
+This leads to the following complex dielectric function \( \epsilon^*(\omega) \):
+\begin{equation}
+\label{debye}
+\epsilon^*(\omega) = \epsilon_\infty + \frac{\Delta \epsilon}{1 + i \omega \tau_D}
+\end{equation}
+
+where \( \Delta \epsilon = \epsilon_S - \epsilon_\infty \) is the dielectric relaxation intensity, with \( \epsilon_S = \lim_{\omega \to 0} \epsilon'(\omega) \) and \( \epsilon_\infty = \lim_{\omega \to \infty} \epsilon'(\omega) \).
+
+The Debye relaxation time \( \tau_D \) is related to the position of maximal loss by
+\begin{equation}
+\omega_p = \frac{2\pi}{\nu_p} = \frac{1}{\tau_D}
+\label{relaxation_freq_relation}
+\end{equation}
+Equation \ref{debye} is known as Debye relaxation, and is the basis for further models we will discuss next.
+\subsection{Expanding on the Debye Model}
+The Debye model above is, however, not sufficient to describe all the effects that happen within the dielectric spectra in most cases. Therefore, non-Debye models have been introduced, and a short outline will be discussed below.
+
+A commonly used model is the Cole-Cole function, given by:
+
+\[
+\epsilon^*_{\text{CC}}(\omega) = \epsilon_\infty + \frac{\Delta \epsilon}{1 + (i \omega \tau_{\text{CC}})^\beta}
+\]
+
+where \( 0 < \beta \leq 1 \). This function introduces a symmetrical broadening of the relaxation function, with the Debye function recovered when \( \beta = 1 \). The characteristic relaxation time \( \tau_{\text{CC}} \) determines the position of maximal loss, defined analogously as in Equation \ref{relaxation_freq_relation}.
+
+
+
+For cases where the dielectric function exhibits asymmetric broadening, the Fuoss-Kirkwood or Cole-Davidson functions are more appropriate. The Cole-Davidson function is expressed as:
+
+\[
+\epsilon^*_{\text{CD}}(\omega) = \epsilon_\infty + \frac{\Delta \epsilon}{(1 + i \omega \tau_{\text{CD}})^\gamma}
+\]
+
+Here, \( 0 < \gamma \leq 1 \) introduces asymmetry, with the Debye function being a special case when \( \gamma = 1 \). The characteristic relaxation time \( \tau_{\text{CD}} \) does not necessarily correspond to the position of maximal loss, which is instead given by:
+
+\[
+\omega_p = \frac{1}{\tau_{\text{CD}}} \tan\left(\frac{\pi}{2\gamma + 2}\right)
+\]
+
+\subsection{The Havriliak-Negami Function}
+A more general approach is provided by the Havriliak-Negami (HN) function, which combines features of both the Cole-Cole and Cole-Davidson functions:
+
+\[
+\epsilon^*_{\text{HN}}(\omega) = \epsilon_\infty + \frac{\Delta \epsilon}{(1 + (i \omega \tau_{\text{HN}})^\beta)^\gamma}
+\]
+
+In the HN function, \( 0 < \beta, \gamma \leq 1 \), where \( \beta \) and \( \gamma \) describe the symmetric and asymmetric broadening, respectively. The behavior of the dielectric function at low and high frequencies, \( \epsilon_S - \epsilon'(\omega) \sim \omega^m \) and \( \epsilon'' \sim \omega^m \) for \( \omega \ll 1/\tau_{\text{HN}} \), is characterized by the exponent \( m = \beta \).
+
+
+The dielectric function's behavior at high frequencies can be described by the following relationships:
+
+\[
+\epsilon'(\omega) - \epsilon_\infty \sim \omega^{-n} \quad \text{and} \quad \epsilon'' \sim \omega^{-n} \quad \text{for} \quad \omega \gg \frac{1}{\tau_{\text{HN}}}
+\]
+
+with \( n = \beta \gamma \). The parameters \( m \) and \( n \), introduced by Jonscher, represent the slopes of \( \log \epsilon'' \) versus \( \log \omega \) at low and high frequencies, respectively, relative to the position of maximal loss.
+
+The position of maximal loss \( \omega_p \) depends on the shape parameters \( \beta \) and \( \gamma \) as follows:
+
+\[
+\omega_p = \frac{1}{\tau_{\text{HN}}} \left[ \sin \left(\frac{\beta \pi}{2 + 2\gamma}\right) \right]^{\frac{1}{\beta}} \left[\sin \left(\frac{\beta \gamma \pi}{2 + 2\gamma}\right)\right]^{-\frac{1}{\beta}}
+\]
+and therefore,
+
+\[
+	\tau_c(\beta, \gamma) = \tau_{HN} \left[\sin\left(\frac{\pi \beta \gamma}{2 + 2\gamma}\right)\right]^{-\frac{1}{\beta}} \left[\sin\left(\frac{\pi \beta}{2 + 2\gamma}\right)\right]^{\frac{1}{\beta}}
+\]
+corresponds to the relaxation time at maximum loss peak.
+%todo cite study for polystirene
+\section{The Derivative Method}
+
+Due to the significant conductivity contribution, which obscures the clear observation of the loss peak near the glass transition temperature, the derivative method has to be employed. %\(\left(\epsilon''_{\text{der}} = \left(-\frac{\pi}{2}\right)\frac{d\epsilon''}{d\ln f} \approx \epsilon''_{\text{rel}}\right)\) as an alternative approach to estimate the \(\alpha\)-relaxation time for both bulk and thin-film materials.
+This consists in exploiting the KK relation to our advantage: since the integral transform of $\epsilon^\prime$ doesn't include the (ionic) Ohmic conduction term, it will contain the same information as $\epsilon^{\prime\prime}$ without this conductivity contribution.
+
+An easy way to interpret $\epsilon^\prime$ is to take its derivative and using the relationship: \[
+\epsilon''_{\text{der}} = \left(-\frac{\pi}{2}\right)\frac{d\epsilon'}{d\ln f} \approx \epsilon''_{\text{rel}}
+\]
+%\section{Broadband Dielectric Spectroscopy}
 \section{Thin Films}
 \subsection{Introduction to Thin Films}
 \subsection{Electrical Properties of Thin Films}
@@ -171,7 +279,7 @@ where $\epsilon$ is the permittivity, $A$ is the surface area of the plate, and 
 
 %todo explain how atomic force microscopy works, insert figure from wikipedia
 
-The measurement of the latter, however, is more challenging and cannot rely solely on the initial concentration of the spin-coated solution, as this would be overly imprecise and unreliable.
+The measurement of the latter, however, is more challenging and cannot be obtained by the initial concentration of the spin-coated solution, as this would be overly imprecise and unreliable.
 
 To accurately determine the thickness, AFM is employed in the following manner:
 \begin{enumerate}
