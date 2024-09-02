@@ -9,22 +9,35 @@
 \contentsline {subsection}{\numberline {2.1.2}Electric Displacement Field}{5}{}%
 \contentsline {subsection}{\numberline {2.1.3}Complex Dielectric Function}{6}{}%
 \contentsline {subsection}{\numberline {2.1.4}Dielectric Relaxation}{6}{}%
-\contentsline {section}{\numberline {2.2}Modeling Functions}{6}{}%
-\contentsline {subsection}{\numberline {2.2.1}Expanding on the Debye Model}{7}{}%
-\contentsline {subsection}{\numberline {2.2.2}The Havriliak-Negami Function}{7}{}%
-\contentsline {section}{\numberline {2.3}The Derivative Method}{8}{}%
-\contentsline {section}{\numberline {2.4}Thin Films}{8}{}%
-\contentsline {subsection}{\numberline {2.4.1}Introduction to Thin Films}{8}{}%
-\contentsline {subsection}{\numberline {2.4.2}Electrical Properties of Thin Films}{8}{}%
-\contentsline {subsection}{\numberline {2.4.3}Ohmic Conductivity in Thin Films}{8}{}%
-\contentsline {subsection}{\numberline {2.4.4}Havriliak-Negami Function}{8}{}%
-\contentsline {chapter}{\numberline {3}Methods}{9}{}%
-\contentsline {section}{\numberline {3.1}Preparation of the samples}{9}{}%
-\contentsline {subsection}{\numberline {3.1.1}Solution Preparation}{9}{}%
-\contentsline {subsection}{\numberline {3.1.2}Preparation of the Substrate}{10}{}%
-\contentsline {subsection}{\numberline {3.1.3}Spin-Coating of the Solution}{10}{}%
-\contentsline {subsection}{\numberline {3.1.4}Heating and Annealing}{11}{}%
-\contentsline {section}{\numberline {3.2}Atomic Force Microscopy}{11}{}%
-\contentsline {section}{\numberline {3.3}Dielectric Spectroscopy}{11}{}%
-\contentsline {chapter}{\numberline {4}Results \& Discussion}{13}{}%
-\contentsline {chapter}{\numberline {5}Synopse}{15}{}%
+\contentsline {section}{\numberline {2.2}Relaxation in Polymers}{7}{}%
+\contentsline {section}{\numberline {2.3}Thin Films}{7}{}%
+\contentsline {subsection}{\numberline {2.3.1}Introduction to Thin Films}{7}{}%
+\contentsline {subsection}{\numberline {2.3.2}Dynamics in Thin Films}{7}{}%
+\contentsline {subsection}{\numberline {2.3.3}Two Different Interpretations}{7}{}%
+\contentsline {section}{\numberline {2.4}Modeling Functions}{7}{}%
+\contentsline {subsection}{\numberline {2.4.1}Expanding on the Debye Model}{7}{}%
+\contentsline {subsection}{\numberline {2.4.2}The Havriliak-Negami Function}{8}{}%
+\contentsline {section}{\numberline {2.5}The Derivative Method}{8}{}%
+\contentsline {subsection}{\numberline {2.5.1}Our Fitting Function}{9}{}%
+\contentsline {chapter}{\numberline {3}Methods \& Materials}{11}{}%
+\contentsline {section}{\numberline {3.1}The Polymers in Question}{11}{}%
+\contentsline {subsection}{\numberline {3.1.1}Poly-TPD}{11}{}%
+\contentsline {subsection}{\numberline {3.1.2}Poly-Bisphenol}{11}{}%
+\contentsline {section}{\numberline {3.2}Preparation of the samples}{12}{}%
+\contentsline {subsection}{\numberline {3.2.1}Solution Preparation}{12}{}%
+\contentsline {subsection}{\numberline {3.2.2}Preparation of the Substrate}{12}{}%
+\contentsline {subsection}{\numberline {3.2.3}Spin-Coating of the Solution}{13}{}%
+\contentsline {subsection}{\numberline {3.2.4}Heating and Annealing}{13}{}%
+\contentsline {section}{\numberline {3.3}Atomic Force Microscopy}{13}{}%
+\contentsline {section}{\numberline {3.4}Dielectric Spectroscopy}{14}{}%
+\contentsline {chapter}{\numberline {4}Results \& Discussion}{15}{}%
+\contentsline {section}{\numberline {4.1}Obtained Dielectric Spectra}{15}{}%
+\contentsline {subsection}{\numberline {4.1.1}Qualitative Observations}{15}{}%
+\contentsline {section}{\numberline {4.2}Fitting of the Data}{17}{}%
+\contentsline {section}{\numberline {4.3}Discussion about the Obtained Parameters}{17}{}%
+\contentsline {subsection}{\numberline {4.3.1}Relaxation Times}{17}{}%
+\contentsline {subsubsection}{VFT fit of the relaxation times}{17}{}%
+\contentsline {subsubsection}{Discussion and Comparison with other Polymers in Literature}{17}{}%
+\contentsline {subsection}{\numberline {4.3.2}Dielectric strengths (Delta Epsilon)}{17}{}%
+\contentsline {subsection}{\numberline {4.3.3}beta/gamma?}{17}{}%
+\contentsline {chapter}{\numberline {5}Synopse}{19}{}%

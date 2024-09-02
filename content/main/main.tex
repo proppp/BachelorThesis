@@ -7,15 +7,15 @@ The present work aims to illustrate how these contributions combine to produce t
 \section{Basic Concepts}
 \subsection{Maxwell's Equations}
 
-Maxwell's equations form the foundation of classical electromagnetism, describing how electric charges and currents produce electric and magnetic fields, as well as how those fields interact with each other and with matter. The four Maxwell's equations are:
+Maxwell's equations form the foundation of classical electromagnetism, describing how electric charges and currents produce electric and magnetic fields, as well as how those fields interact with each other and with matter. It is deemed worthwhile to quickly recall them:
 
 \begin{enumerate}
-    \item \textbf{Gauss's Law for Electricity:}
+\item \textbf{Gau{\ss} Theorem for Electricity:}
     \begin{equation}
     \nabla \cdot \mathbf{E} = \frac{\rho}{\epsilon_0}
     \end{equation}
 
-    \item \textbf{Gauss's Law for Magnetism:}
+    \item \textbf{Gau{\ss} Theorem for Magnetism:}
     \begin{equation}
     \nabla \cdot \mathbf{B} = 0
     \end{equation}
@@ -25,7 +25,7 @@ Maxwell's equations form the foundation of classical electromagnetism, describin
     \nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}
     \end{equation}
 
-    \item \textbf{Ampère's Law (with Maxwell's correction):}
+    \item \textbf{Ampère's Law (with Maxwell's addition):}
     \begin{equation}
     \nabla \times \mathbf{B} = \mu_0 \mathbf{J} + \mu_0 \epsilon_0 \frac{\partial \mathbf{E}}{\partial t}
     \end{equation}
@@ -40,7 +40,7 @@ The electric displacement field \( \mathbf{D} \) relates to the electric field \
 	\mathbf{D} = \epsilon_0 \mathbf{E} + \mathbf{P} = \epsilon_0 \boldsymbol{\epsilon} \mathbf{E}
 \]
 
-where \( \epsilon_0 \) is the permittivity of free space, \( \mathbf{E} \) is the electric field, \( \mathbf{P} \) is the polarization vector (i.e. dipole moment per unit volume of the material), and \( \boldsymbol{\epsilon} \) represents the dielectric function (DF) %todo add abbreviation
+where \( \epsilon_0 \) is the permittivity of free space, \( \mathbf{E} \) is the electric field, \( \mathbf{P} \) is the polarization vector (i.e. dipole moment per unit volume of the material), and \( \boldsymbol{\epsilon} \) represents the \ac{DF} %todo add abbreviation
 and is generally a tensor of rank 2 because of the non-required collinearity between \( \mathbf{D} \) and \( \mathbf{E} \). %todo cite grundmann on this
 
 
@@ -82,6 +82,13 @@ Here, \( \epsilon'(\omega) \) represents the energy stored in the system per per
 \]
 
 This expression is a one-sided Fourier or full imaginary Laplace transformation.
+\section{Relaxation in Polymers}
+
+\section{Thin Films}
+\subsection{Introduction to Thin Films}
+\subsection{Dynamics in Thin Films}
+% mention chain stiffness, etc.
+\subsection{Two Different Interpretations}
 
 \section{Modeling Functions}
 
@@ -136,7 +143,7 @@ Here, \( 0 < \gamma \leq 1 \) introduces asymmetry, with the Debye function bein
 \]
 
 \subsection{The Havriliak-Negami Function}
-A more general approach is provided by the Havriliak-Negami (HN) function, which combines features of both the Cole-Cole and Cole-Davidson functions:
+A more general approach is provided by the \ac{HN} function, which combines features of both the Cole-Cole and Cole-Davidson functions:
 
 \[
 \epsilon^*_{\text{HN}}(\omega) = \epsilon_\infty + \frac{\Delta \epsilon}{(1 + (i \omega \tau_{\text{HN}})^\beta)^\gamma}
@@ -168,20 +175,49 @@ corresponds to the relaxation time at maximum loss peak.
 \section{The Derivative Method}
 
 Due to the significant conductivity contribution, which obscures the clear observation of the loss peak near the glass transition temperature, the derivative method has to be employed. %\(\left(\epsilon''_{\text{der}} = \left(-\frac{\pi}{2}\right)\frac{d\epsilon''}{d\ln f} \approx \epsilon''_{\text{rel}}\right)\) as an alternative approach to estimate the \(\alpha\)-relaxation time for both bulk and thin-film materials.
-This consists in exploiting the KK relation to our advantage: since the integral transform of $\epsilon^\prime$ doesn't include the (ionic) Ohmic conduction term, it will contain the same information as $\epsilon^{\prime\prime}$ without this conductivity contribution.
+This consists in exploiting the \ac{KK} relation to our advantage: since the integral transform of $\epsilon^\prime$ doesn't include the (ionic) Ohmic conduction term, it will contain the same information as $\epsilon^{\prime\prime}$ without this conductivity contribution.
 
 An easy way to interpret $\epsilon^\prime$ is to take its derivative and using the relationship: \[
 \epsilon''_{\text{der}} = \left(-\frac{\pi}{2}\right)\frac{d\epsilon'}{d\ln f} \approx \epsilon''_{\text{rel}}
 \]
+which means that the HN function for the derivative of $\epsilon^{\prime}$ will have the form: \[
+\frac{\partial \epsilon'_{\text{HN}}}{\partial \ln f} = -\frac{\beta \gamma \Delta \epsilon \cdot (2\pi f \tau)^\beta \cos \left[\beta \frac{\pi}{2} - (1+\gamma)\theta_{\text{HN}}\right]}{\left[1 + 2(2\pi f \tau)^\beta \cos \left(\frac{\beta \pi}{2}\right) + (2\pi f \tau)^{2\beta}\right]^{(1+\gamma)/2}}
+\]
+where \[
+\theta_{\text{HN}} = \arctan \left[\frac{\sin(\pi \beta / 2)}{(2\pi f \tau)^{-\beta} + \cos(\pi \beta / 2)}\right]
+\]
+and the rest of the parameters are defined as before.
+
 %\section{Broadband Dielectric Spectroscopy}
-\section{Thin Films}
-\subsection{Introduction to Thin Films}
-\subsection{Electrical Properties of Thin Films}
-\subsection{Ohmic Conductivity in Thin Films}
-\subsection{Havriliak-Negami Function}
+\subsection{Our Fitting Function}
+Based on these considerations, the fitting function for our data will have the following form: \[
+F(\Delta\epsilon_i, \tau_{\text{HN}_i}, \beta_i, \gamma_i, \sigma_0, a) = \sum_{i=1}^{3} \left(\frac{\partial \epsilon'_{\text{HN}}}{\partial \ln f}\right)_i + \frac{\sigma_0}{\epsilon_0 \omega^a}
+\]
+where the first term consists in multiple \ac{HN} functions which are summed together -- up to three, depending on the number of peaks in the spectrum -- and the second term indicates the \ac{EP}, which usually happens at low frequencies before the first \ac{HN} peak, and has the form of a DC conductivity, but is not always occurring and thus optional.
 
-\chapter{Methods}
+\chapter{Methods \& Materials}
+\section{The Polymers in Question}
+Two different polymers are analyzed in this work: \ac{Poly-TPD} and \ac{Poly-Bisphenol}.
+\subsection{Poly-TPD}
+Poly-TPD is from the supplier Polymer Source, Inc.{\texttrademark}  with the sample number P16210-PolyTPD-FA, has a $M_n = 28.500$, and $M_w = 32.000$. It consists of \ac{TPD} with \ac{FA} units incorporated into its backbone. The chemical structure can be described by the repeating units:
 
+\[
+\text{(C}_{15}\text{H}_{11}\text{N)}-\text{(C}_{13}\text{H}_{8}\text{)}_{\text{n}}
+\]
+
+This polymer contains an FA conjugated backbone that is critical for its semiconducting properties. In particular its high hole mobility, in the range of $10^{-4}$ to $10^{-3}$ cm$^2$/Vs, makes it suitable for use as a \ac{HTL} in \ac{OLED} and \ac{OPV} devices.
+
+As for its thermodynamic properties, Poly-TPD exhibits good thermal stability, with a decomposition temperature $T_d$ $>$ 350\degree C, and a glass transition temperature around 90-150\degree C. %todo mention reference.
+
+\subsection{Poly-Bisphenol}
+Poly-Bisphenol, on the other hand, came from the manifacturer Sigma-Aldrich, with the sample code 181625-250G Poly(Bisphenol A carbonate), and has a $M_w \approx 45.000$ by \ac{GPC}. Its glass transition temperature is $T_g \approx 150 \degree \text{C}$, and melting point $T_m \approx 267 \degree \text{C}$. %todo reference
+It has the repeating unit (or monomer)
+\[
+\text{C}_{15}\text{H}_{16}\text{O}_{2}
+\]
+and is a thermoplastic polymer with optical clarity, high tensile strength/impact resistace, high refractive index, and it is used, for example, to prepare optical lenses or as a supporting matrix to fabricate hybrid nanofiber membranes.
+
+%
 \section{Preparation of the samples}
 
 The preparation of the samples required for our analysis involves creating parallel-plate capacitors on a glass substrate. These capacitors have an area of approximately \( 6 \times 6 \, \text{mm} \) and a thickness that varies from around \( 300 \, \text{nm} \) to \( 5 \, \text{nm} \).
@@ -217,9 +253,9 @@ Substituting the known values:
 \]
 Solving for \( V_1 \):
 \[
-V_1 = \frac{10 \, \text{mg/ml} \times 10 \, \text{ml}}{20 \, \text{mg/ml}} = \frac{100}{20} = 5 \, \text{ml}
+	V_1 = \frac{10 \, \text{mg/ml} \times 10 \, \text{ml}}{20 \, \text{mg/ml}} = \frac{100 \text{ml}}{20} = 5 \, \text{ml}
 \]
-Thus, to achieve a concentration of \( 10 \, \text{mg/ml} \) from an initial concentration of \( 20 \, \text{mg/ml} \), \( 5 \, \text{ml} \) of the original solution diluted with \( 5 \, \text{ml} \) of solvent are needed for a final volume of \( 10 \, \text{ml} \).
+% to achieve a concentration of \( 10 \, \text{mg/ml} \) from an initial concentration of \( 20 \, \text{mg/ml} \), \( 5 \, \text{ml} \) of the original solution diluted with \( 5 \, \text{ml} \) of solvent are needed for a final volume of \( 10 \, \text{ml} \).
 
 This was done similarly for all other solutions, and the resulting concentrations are shown in Table \ref{tab:solution-concentrations}
 
@@ -231,7 +267,7 @@ This was done similarly for all other solutions, and the resulting concentration
 \begin{center}
 \begin{tabular}{@{}ccc@{}}
 \toprule
-C (mg/ml) & $V_{solution}$ & $V_{solvent}$ \\ \midrule
+C (mg/ml) & $V_{solution}\text{(ml)}$ & $V_{solvent}\text{(ml)}$ \\ \midrule
 10                    & 5           & 5          \\ \midrule
 3                     & 3           & 7          \\ \midrule
 1                     & 3           & 6          \\ \midrule
@@ -289,11 +325,187 @@ To accurately determine the thickness, AFM is employed in the following manner:
 where a simple statistical average of the two heights can be calculated, providing a relatively accurate thickness of the dielectric.
 \end{enumerate}
 
-This process was repeated three or more times for each sample, and the resulting thicknesses were then averaged for each of the capacitors. The results of these measurements are presented below.
+This process was repeated two or more times for each sample, and the resulting thicknesses were then averaged for each of the capacitors. The results of these measurements are presented below.
 
 \section{Dielectric Spectroscopy}
-Once we know the parameters of our samples, we can move to the actual dielectric spectroscopy measurements.
-This technique enables to measure the
-%instert how you connected the samples, ensuring the resistance across the aluminum, etc.
+Once we know the parameters of our samples, we can move to the actual \ac{BDS} measurements.
+This technique enables to obtain (among other things) the frequency and temperature-dependent complex and real parts of the \ac{DF} $\epsilon^*$, from which molecular dipole dynamics, polarization phenomena, and relaxation processes can be deduced. In our case, the frequency range was set up to be from $10^{-1} \text{Hz}$ to $10^6 \text{Hz}$, and a temperature from about $290 \text{K}$ to $530 \text{K}$.
+
+
+A frequency generator takes care of the AC current input, with a \ac{RMS} voltage $V_{RMS} = 0.1 \text{V}$, while temperature is controlled using a Dewar flask containing liquid nitrogen, and resistances that are heated depending on the wanted temperature. The temperature of the sample is then measured using a platinum resistance therometer, which allows for a very precise sensing of T (with an error of less than 1K).
+
+
+Proper attention must be given to the connection between the sample and the \ac{BDS} setup. This is achieved by using copper/gold terminals that are secured to the aluminum surface of the capacitor plates with screws, ensuring firm contact with the glass slide. Careful attention is given to ensure that the resistance is less than $2 \text{\Omega}$ across the plate and the \ac{BDS} terminals, and $> 20 \text{M\Omega}$ between the two plates (otherwise it would be counted as a shorted capacitor).
+
+
+That done, the sample holder is placed in the setup and the measurement can be started, lasting about 18 hours for the whole temperature range to be recorded on both heating and cooling, such that reproducibility is guaranteed. However, especially in thinner films, it was noted that the sample undergoes some dielectric changes after being exposed to rapid and repeated temperature fluctuations.
+%insert how you connected the samples, ensuring the resistance across the aluminum, etc.
 
 \chapter{Results \& Discussion}
+
+\section{Obtained Dielectric Spectra}
+The final dielectric spectra are plotted in Figures \ref{300tpd}, \ref{110tpd}, \ref{24tpd} and \ref{8tpd} for the various thicknesses of Poly-TPD and \ref{320bis}, \ref{43bis} and \ref{14bis} for Poly-Bisphenol, along with the derivative of epsilon prime.
+%\begin{figure}[htp!]
+%    \centering
+%    \hspace*{-0.8cm}
+%    \includegraphics[scale = 0.4]{pics/Poly-TPD_300nm_epsilon_double_prime_plot.pdf}
+%    \caption{Mass Spectrum of gas (single ionized).}
+%    \label{Krypton_39_44}
+%\end{figure}
+%
+
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-TPD_300nm_epsilon_double_prime_plot.pdf}
+  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
+  %\label{fig:300tpd}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-TPD_300nm_derivative_eps_prime.pdf}
+  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
+  %\label{fig:300tpdder}
+\end{subfigure}
+\caption{300nm Poly-TPD thin film, complex dielectric function and derivative of the real part as a function of frequency at different temperatures (plotted once every 30 kelvin for clarity).}
+  \label{300tpd}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-TPD_110nm_epsilon_double_prime_plot.pdf}
+  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-TPD_110nm_derivative_eps_prime.pdf}
+  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
+\end{subfigure}
+\caption{110nm Poly-TPD thin film}
+  \label{110tpd}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-TPD_24nm_epsilon_double_prime_plot.pdf}
+  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-TPD_24nm_derivative_eps_prime.pdf}
+  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{24nm Poly-TPD thin film}
+  \label{24tpd}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-TPD_8nm_epsilon_double_prime_plot.pdf}
+  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-TPD_8nm_derivative_eps_prime.pdf}
+  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{8nm Poly-TPD thin film}
+  \label{8tpd}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_320nm_epsilon_double_prime_plot.pdf}
+  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_320nm_derivative_eps_prime.pdf}
+  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{320nm Poly-Bisphenol thin film}
+  \label{320bis}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_43nm_epsilon_double_prime_plot.pdf}
+  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_43nm_derivative_eps_prime.pdf}
+  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{43nm Poly-Bisphenol thin film}
+  \label{43bis}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_14nm_epsilon_double_prime_plot.pdf}
+  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_14nm_derivative_eps_prime.pdf}
+  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
+  \label{fig:sub2}
+\end{subfigure}
+\caption{14nm Poly-Bisphenol thin film}
+  \label{14bis}
+\end{figure}
+
+\subsection{Qualitative Observations}
+A quick overview at the obtained spectra brings one to notice the following traits:
+\begin{itemize}
+	\item{The derivative plot is generally  more helpful in identifying the occurring peaks, which are more pronounced with respect to the $\epsilon^{\prime\prime}$ plot. This happens because of the removal of Ohmic conductivity, as discussed earlier.} %todo maybe refer to discussion
+	\item{At low temperature, the plots become more imprecise, probably due to a combination of the electronic oscillations and computation artifacts in the case of the derivative. In some cases, a spline interpolation was used to make the data more suitable for the subsequent fitting.}
+	\item{Thinner films generally exhibit a breakdown (i.e. shorting) at lower temperatures, although not always (as was the case of the 320nm Poly-Bisphenol film). This is consistent with the expectation that higher temperatures facilitate the penetration of the aluminum layers in the polymer, which becomes more conductive and eventually shorted. Also the thermal expansion of aluminum might be playing a role, though it should only be relevant for the thinner films, as its range of action is $\approx 5 \text{nm}$}.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Fitting of the Data}
+\section{Discussion about the Obtained Parameters}
+\subsection{Relaxation Times}
+\subsubsection{VFT fit of the relaxation times}
+\subsubsection{Discussion and Comparison with other Polymers in Literature}
+\subsection{Dielectric strengths (Delta Epsilon)}
+\subsection{beta/gamma?}
