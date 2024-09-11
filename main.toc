@@ -9,35 +9,45 @@
 \contentsline {subsection}{\numberline {2.1.2}Electric Displacement Field}{5}{}%
 \contentsline {subsection}{\numberline {2.1.3}Complex Dielectric Function}{6}{}%
 \contentsline {subsection}{\numberline {2.1.4}Dielectric Relaxation}{6}{}%
-\contentsline {section}{\numberline {2.2}Relaxation in Polymers}{7}{}%
+\contentsline {section}{\numberline {2.2}Relaxation in Polymers and Glass Transition}{6}{}%
+\contentsline {subsection}{\numberline {2.2.1}$\alpha \text {-Relaxation}$}{7}{}%
+\contentsline {subsection}{\numberline {2.2.2}$\beta \text {-Relaxation}$}{7}{}%
 \contentsline {section}{\numberline {2.3}Thin Films}{7}{}%
-\contentsline {subsection}{\numberline {2.3.1}Introduction to Thin Films}{7}{}%
+\contentsline {subsection}{\numberline {2.3.1}Introduction to Thin Films and the Debate about $T_g$}{7}{}%
 \contentsline {subsection}{\numberline {2.3.2}Dynamics in Thin Films}{7}{}%
-\contentsline {subsection}{\numberline {2.3.3}Two Different Interpretations}{7}{}%
-\contentsline {section}{\numberline {2.4}Modeling Functions}{7}{}%
-\contentsline {subsection}{\numberline {2.4.1}Expanding on the Debye Model}{7}{}%
-\contentsline {subsection}{\numberline {2.4.2}The Havriliak-Negami Function}{8}{}%
-\contentsline {section}{\numberline {2.5}The Derivative Method}{8}{}%
-\contentsline {subsection}{\numberline {2.5.1}Our Fitting Function}{9}{}%
-\contentsline {chapter}{\numberline {3}Methods \& Materials}{11}{}%
-\contentsline {section}{\numberline {3.1}The Polymers in Question}{11}{}%
-\contentsline {subsection}{\numberline {3.1.1}Poly-TPD}{11}{}%
-\contentsline {subsection}{\numberline {3.1.2}Poly-Bisphenol}{11}{}%
-\contentsline {section}{\numberline {3.2}Preparation of the samples}{12}{}%
-\contentsline {subsection}{\numberline {3.2.1}Solution Preparation}{12}{}%
-\contentsline {subsection}{\numberline {3.2.2}Preparation of the Substrate}{12}{}%
-\contentsline {subsection}{\numberline {3.2.3}Spin-Coating of the Solution}{13}{}%
-\contentsline {subsection}{\numberline {3.2.4}Heating and Annealing}{13}{}%
-\contentsline {section}{\numberline {3.3}Atomic Force Microscopy}{13}{}%
-\contentsline {section}{\numberline {3.4}Dielectric Spectroscopy}{14}{}%
-\contentsline {chapter}{\numberline {4}Results \& Discussion}{15}{}%
-\contentsline {section}{\numberline {4.1}Obtained Dielectric Spectra}{15}{}%
-\contentsline {subsection}{\numberline {4.1.1}Qualitative Observations}{15}{}%
-\contentsline {section}{\numberline {4.2}Fitting of the Data}{17}{}%
-\contentsline {section}{\numberline {4.3}Discussion about the Obtained Parameters}{17}{}%
-\contentsline {subsection}{\numberline {4.3.1}Relaxation Times}{17}{}%
-\contentsline {subsubsection}{VFT fit of the relaxation times}{17}{}%
-\contentsline {subsubsection}{Discussion and Comparison with other Polymers in Literature}{17}{}%
-\contentsline {subsection}{\numberline {4.3.2}Dielectric strengths (Delta Epsilon)}{17}{}%
-\contentsline {subsection}{\numberline {4.3.3}beta/gamma?}{17}{}%
-\contentsline {chapter}{\numberline {5}Synopse}{19}{}%
+\contentsline {subsection}{\numberline {2.3.3}Deconvolution and Gradient of Relaxation Time in Thin Films}{8}{}%
+\contentsline {section}{\numberline {2.4}Modeling Functions}{8}{}%
+\contentsline {subsection}{\numberline {2.4.1}Expanding on the Debye Model}{9}{}%
+\contentsline {subsection}{\numberline {2.4.2}The Havriliak-Negami Function}{9}{}%
+\contentsline {section}{\numberline {2.5}The Derivative Method}{10}{}%
+\contentsline {subsection}{\numberline {2.5.1}Our Fitting Function for the BDS Data}{10}{}%
+\contentsline {section}{\numberline {2.6}The VFT Function}{11}{}%
+\contentsline {chapter}{\numberline {3}Methods \& Materials}{13}{}%
+\contentsline {section}{\numberline {3.1}The Polymers in Question}{13}{}%
+\contentsline {subsection}{\numberline {3.1.1}Poly-TPD}{13}{}%
+\contentsline {subsection}{\numberline {3.1.2}Poly-Bisphenol}{14}{}%
+\contentsline {section}{\numberline {3.2}Preparation of the samples}{14}{}%
+\contentsline {subsection}{\numberline {3.2.1}Solution Preparation}{14}{}%
+\contentsline {subsection}{\numberline {3.2.2}Preparation of the Substrate}{15}{}%
+\contentsline {subsection}{\numberline {3.2.3}Spin-Coating of the Solution}{15}{}%
+\contentsline {subsection}{\numberline {3.2.4}Heating and Annealing}{16}{}%
+\contentsline {section}{\numberline {3.3}Atomic Force Microscopy}{16}{}%
+\contentsline {section}{\numberline {3.4}Dielectric Spectroscopy}{17}{}%
+\contentsline {chapter}{\numberline {4}Results \& Discussion}{19}{}%
+\contentsline {section}{\numberline {4.1}Obtained Dielectric Spectra}{19}{}%
+\contentsline {subsection}{\numberline {4.1.1}Qualitative Observations}{19}{}%
+\contentsline {section}{\numberline {4.2}Fitting of the Data}{20}{}%
+\contentsline {section}{\numberline {4.3}Discussion about the Obtained Parameters}{20}{}%
+\contentsline {subsection}{\numberline {4.3.1}Relaxation Times}{20}{}%
+\contentsline {subsubsection}{Poly-TPD}{20}{}%
+\contentsline {subsubsection}{Poly-Bisphenol}{20}{}%
+\contentsline {subsubsection}{VFT fit of the relaxation times}{21}{}%
+\contentsline {subsection}{\numberline {4.3.2}$\alpha $ and $\beta \text {-Relaxation}$ and Dielectric strengths $\Delta \epsilon $}{21}{}%
+\contentsline {section}{\numberline {4.4}Revisiting the Glass Transition Temperature Debate}{22}{}%
+\contentsline {chapter}{\numberline {5}Synopse}{27}{}%
+\contentsline {chapter}{\numberline {A}AFM Data}{31}{}%
+\contentsline {chapter}{\numberline {B}BDS Data}{33}{}%
+\contentsline {chapter}{\numberline {C}Fits of the BDS Data}{37}{}%
+\contentsline {section}{\numberline {C.1}Poly-TPD, 200nm thin film}{37}{}%
+\contentsline {section}{\numberline {C.2}Poly-TPD, 200nm thin film}{37}{}%
+\contentsline {section}{\numberline {C.3}Poly-Bisphenol, 43nm thin film}{37}{}%

@@ -82,14 +82,48 @@ Here, \( \epsilon'(\omega) \) represents the energy stored in the system per per
 \]
 
 This expression is a one-sided Fourier or full imaginary Laplace transformation.
-\section{Relaxation in Polymers}
+\section{Relaxation in Polymers and Glass Transition}
+
+
+Relaxation processes in polymers are fundamental to understanding their mechanical and electrical behaviors -- especially in response to external stimuli such as stress or electric fields. These processes describe the return of polymer chains or segments to equilibrium after being disturbed. The relaxation behavior of polymers is highly dependent on temperature and frequency, leading to distinct relaxation modes.
+
+ The two main relaxation processes, based on the time scales and the types of molecular motions involved, are $\alpha$ and $\beta\text{-relaxations}$.
+
+\subsection{$\alpha\text{-Relaxation}$}
+
+
+The \(\alpha\text{-relaxation}\) is linked to large-scale, cooperative motions of polymer chains and is directly associated with the \ac{GTT} in bulk polymers. This relaxation process occurs near or above \(T_g\), where the polymer transitions from a rigid, glassy state to a more flexible, rubbery state. %\(\alpha\text{-relaxation}\) is characterized by significant changes in both the mechanical and dielectric properties of the material, reflecting the profound impact of this transition on the polymer's behavior.
+\subsection{$\beta\text{-Relaxation}$}
+
+The $\beta\text{-Relaxation}$ is a secondary relaxation process that occurs at temperatures below \(T_g\). It involves localized motions of smaller segments or side groups of the polymer chains, rather than the entire chain. Beta relaxations are typically observed at lower temperatures and are responsible for smaller, more subtle changes in the material's properties compared to alpha relaxation.
 
 \section{Thin Films}
-\subsection{Introduction to Thin Films}
-\subsection{Dynamics in Thin Films}
-% mention chain stiffness, etc.
-\subsection{Two Different Interpretations}
+\subsection{Introduction to Thin Films and the Debate about $T_g$}
+Thin films, (i.e. layers of material from nanometers to micrometers thick), are important for the most disparate applications, and thus the subject of many scientific studies. A prominent topic of discussion in the study of thin films is the glass transition temperature \(T_g\). There is an ongoing debate about whether \(T_g\) is altered in thin films compared to bulk materials. This debate arises from numerous studies using techniques such as ellipsometry, neutron and X-ray reflectivity, \ac{PALS}, and thermal probe measurements. These studies have reported both increases and decreases in \(T_g\), which hints that the interaction between the polymer and its boundaries can significantly affect its thermal properties. For instance, freely standing films of high molecular weight polystyrene have been studied, with some theories proposing that additional relaxation modes, such as a "sliding motion" of polymer chains near free surfaces, may be responsible for these observed variations. This topic remains under active investigation, with theoretical models and computer simulations continuing to explore the underlying mechanisms affecting the glass transition in thin films, and we will try to contribute to the debate with the data present in this work. %todo \cite{reference1, reference2, reference3, reference4}.
 
+\subsection{Dynamics in Thin Films}
+
+The dynamics of polymers in thin films can differ significantly from those in the bulk due to a variety of factors, including chain stiffness, film thickness, and interactions at the interface. In thin films, especially those with thicknesses on the order of a few nanometers, the confinement effects and proximity to interfaces can lead to much altered molecular dynamics.
+
+Chain stiffness plays a major role in this: while the dynamics in bulk is largely governed by the intrinsic flexibility or stiffness of the polymer chains, thin films have a reduced dimensionality that can lead to restricted chain mobility, particularly for stiffer polymers (like the ones we are studying in this work). The constraints imposed by the film's boundaries can limit the degree of conformational changes that the polymer chains can undergo, thereby modifying the relaxation processes and overall dynamics.
+
+Another important effect that's accentuated in thin films are interface interactions, because the surface-to-volume ratio is higher, making the influence of the substrate or surrounding medium significant. For polymers with long chain segments, the interface can induce orientation or ordering effects, which are not typically present in the bulk material. %The nature of the polymer-substrate interaction (e.g., strong or weak adhesion) can lead to different dynamic behaviors, such as enhanced mobility near a free surface or suppressed motion near a strongly interacting substrate.
+
+This can lead to the emergence of new relaxation modes or the suppression of bulk relaxation processes. For instance, the sliding motion of polymer chains along their contour, proposed for freely standing films of polystyrene, is an example of how thin film dynamics can introduce mechanisms not observed in bulk polymers. %todo mention study
+
+
+\subsection{Deconvolution and Gradient of Relaxation Time in Thin Films}
+
+Relaxation time in thin films exhibits a spatial gradient, related to how molecular relaxation processes penetrate into the material from the interface.
+
+A way to analyze this behaviour is using deconvolution techniques, which allow for the separation of overlapping relaxation processes, providing detailed insights into the distribution of relaxation times across different regions of a polymer film. This method is particularly useful when studying thin films, where the relaxation time gradient can vary significantly from the interface into the bulk-like interior of the material.
+
+The relaxation time typically shows a pronounced gradient -- starting with values that are either much shorter or much longer than those in the bulk. It then gradually transitions towards bulk-like behavior as one moves away from the interface. Several factors influence this, like chain stiffness and the strength of interactions between the polymer chains and the interface.
+
+Near the interface, the altered mobility of polymer chains, especially in systems with long chain segments, leads to a distinctive dynamic profile. This profile can be captured by advanced models, such as those proposed in recent studies, including the work by Cheng and colleagues \cite{cheng2024}. %todo
+Their study highlights how \ac{BDS} can be used to reveal the spatial gradient of relaxation times. The data obtained from these analyses provide crucial input for theoretical models, such as the \ac{RFOT} theory and the \ac{ECNLE} theory, both of which try to explain the interface-induced modifications in polymer dynamics.
+
+Employing such models is beyond the scope of the present work, but the resulting data can still provide valuable insights and inform future modeling efforts.
 \section{Modeling Functions}
 
 When we aim to analyze dielectric spectra, it all comes down to give physical models that give insight into the occurring phenomena. A simple, commonly-used approximation is the model of relaxation time. The most general way to understand it is that the time derivative of a quantity is proportional to the quantity itself. As an instance:
@@ -189,12 +223,24 @@ where \[
 and the rest of the parameters are defined as before.
 
 %\section{Broadband Dielectric Spectroscopy}
-\subsection{Our Fitting Function}
-Based on these considerations, the fitting function for our data will have the following form: \[
+\subsection{Our Fitting Function for the BDS Data}
+Based on these considerations, the fitting function for our data will have the following form: \begin{equation}
 F(\Delta\epsilon_i, \tau_{\text{HN}_i}, \beta_i, \gamma_i, \sigma_0, a) = \sum_{i=1}^{3} \left(\frac{\partial \epsilon'_{\text{HN}}}{\partial \ln f}\right)_i + \frac{\sigma_0}{\epsilon_0 \omega^a}
-\]
+\label{eq:der_eps}
+\end{equation}
 where the first term consists in multiple \ac{HN} functions which are summed together -- up to three, depending on the number of peaks in the spectrum -- and the second term indicates the \ac{EP}, which usually happens at low frequencies before the first \ac{HN} peak, and has the form of a DC conductivity, but is not always occurring and thus optional.
 
+\section{The VFT Function}
+
+The \ac{VFT} equation is a widely used empirical formula that describes the temperature dependence of the relaxation time $\tau$ in polymers. It is given by:
+
+\[
+\log_{10} \tau = \log_{10} \tau_\infty - \frac{D_T T_0}{T - T_0}
+\]
+
+where $\tau$ is the relaxation time, $T$ is the temperature, $\tau_\infty$ is the relaxation time at infinite temperature, $D_T$ is a material-specific constant (often referred to as the fragility parameter), and $T_0$ is the Vogel temperature, which is typically below the \ac{GTT}.
+We will make use of this equation to describe the relaxation time behavior of our samples, and check for a thickness dependence in the \ac{GTT}.
+%todo cite study
 \chapter{Methods \& Materials}
 \section{The Polymers in Question}
 Two different polymers are analyzed in this work: \ac{Poly-TPD} and \ac{Poly-Bisphenol}.
@@ -209,13 +255,32 @@ This polymer contains an FA conjugated backbone that is critical for its semicon
 
 As for its thermodynamic properties, Poly-TPD exhibits good thermal stability, with a decomposition temperature $T_d$ $>$ 350\degree C, and a glass transition temperature around 90-150\degree C. %todo mention reference.
 
+
+\begin{figure}[htp!]
+    \centering
+    \hspace*{-0.8cm}
+    \includegraphics[scale = 0.16]{pics/poly-tpd.jpg}
+    \caption{Chemical structure of Poly-TPD}
+    \label{Chemical structure of Poly-TPD}
+\end{figure}
+
 \subsection{Poly-Bisphenol}
-Poly-Bisphenol, on the other hand, came from the manifacturer Sigma-Aldrich, with the sample code 181625-250G Poly(Bisphenol A carbonate), and has a $M_w \approx 45.000$ by \ac{GPC}. Its glass transition temperature is $T_g \approx 150 \degree \text{C}$, and melting point $T_m \approx 267 \degree \text{C}$. %todo reference
+Poly-Bisphenol, on the other hand, came from the manifacturer $\text{Sigma-Aldrich}^{\text{\textregistered}}$, with the sample code 181625-250G Poly(Bisphenol A carbonate), and has a $M_w \approx 45.000$ by \ac{GPC}. Its glass transition temperature is $T_g \approx 150 \degree \text{C}$, and melting point $T_m \approx 267 \degree \text{C}$. %todo reference
 It has the repeating unit (or monomer)
 \[
 \text{C}_{15}\text{H}_{16}\text{O}_{2}
 \]
 and is a thermoplastic polymer with optical clarity, high tensile strength/impact resistace, high refractive index, and it is used, for example, to prepare optical lenses or as a supporting matrix to fabricate hybrid nanofiber membranes.
+
+\begin{figure}[htp!]
+    \centering
+    \hspace*{-0.8cm}
+    \includegraphics[scale = 0.19]{pics/poly-bisphenol.jpg}
+    \caption{Chemical structure of Poly-Bisphenol}
+    \label{Chemical structure of Poly-Bisphenol}
+\end{figure}
+
+
 
 %
 \section{Preparation of the samples}
@@ -228,7 +293,7 @@ within the capacitor is particularly important, as our goal is to study the effe
 
 In particular, 7 solutions were prepeared for each of the polymers starting from a concentration of $20 \text{mg/ml}$ %todo
 and roughly halvened.
-The solvent used for Poly-TPD was Chloroform, while Poly-Bisphenol was diluted in Dichloromethane.
+The solvent used for Poly-TPD was Chloroform ($\text{CHCl}_3$, manifacturer $\text{Sigma-Aldrich}^{\text{\textregistered}}$, sample number C2432-1L), while Poly-Bisphenol was diluted in Dichloromethane ($\text{CH}_2\text{Cl}_2$, manifacturer $\text{Sigma-Aldrich}^{\text{\textregistered}}$, sample number 32222).
 
 As an example, to compute the volume required to dilute a solution from an initial concentration of \( 20 \, \text{mg/ml} \) to a desired concentration of \( 10 \, \text{mg/ml} \), with a final volume of \( 10 \, \text{ml} \), we use the dilution formula:
 \[
@@ -303,6 +368,22 @@ Annealing is useful for improving the film's uniformity and adhesion to the subs
 After this process, aluminum was evaporated a second time in strips perpendicular to the earlier ones, completing the fabrication of the capacitors.
 
 
+%todo uncomment these lines at the end
+\begin{figure}[!htb]
+\minipage{0.22\textwidth}
+  \includegraphics[width=\linewidth]{pics/drawing1.png}
+  \caption{Deposition of the aluminum on the glass substrate}\label{fig:drawing1}
+\endminipage\hfill
+\minipage{0.22\textwidth}
+  \includegraphics[width=\linewidth]{pics/drawing2.png}
+  \caption{Spin-coating of the polymer solution}\label{fig:drawing2}
+\endminipage\hfill
+\minipage{0.22\textwidth}%
+  \includegraphics[width=\linewidth]{pics/drawing3.png}
+  \caption{Second deposition of aluminum, perpendicularly on top}\label{fig:drawing3}
+\endminipage
+\end{figure}
+
 \section{Atomic Force Microscopy}
 
 The use of Atomic Force Microscopy (AFM) is particularly useful when measuring the thickness of the dielectric in our samples. This measurement is essential due to the capacitance formula for a parallel-plate capacitor:
@@ -327,12 +408,31 @@ where a simple statistical average of the two heights can be calculated, providi
 
 This process was repeated two or more times for each sample, and the resulting thicknesses were then averaged for each of the capacitors. The results of these measurements are presented below.
 
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.26]{pics/afm/reda.png}
+  \caption{AFM picture of the scratched film}
+  \label{fig:sub1}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.56]{pics/afm/reda.pdf}
+  \caption{height distribution}
+\end{subfigure}
+\caption{Poly-TPD thin film, sample A (200nm), example of a height distribution and AFM picture.}
+  \label{110tpd}
+\end{figure}
+
+
+
 \section{Dielectric Spectroscopy}
 Once we know the parameters of our samples, we can move to the actual \ac{BDS} measurements.
 This technique enables to obtain (among other things) the frequency and temperature-dependent complex and real parts of the \ac{DF} $\epsilon^*$, from which molecular dipole dynamics, polarization phenomena, and relaxation processes can be deduced. In our case, the frequency range was set up to be from $10^{-1} \text{Hz}$ to $10^6 \text{Hz}$, and a temperature from about $290 \text{K}$ to $530 \text{K}$.
 
 
-A frequency generator takes care of the AC current input, with a \ac{RMS} voltage $V_{RMS} = 0.1 \text{V}$, while temperature is controlled using a Dewar flask containing liquid nitrogen, and resistances that are heated depending on the wanted temperature. The temperature of the sample is then measured using a platinum resistance therometer, which allows for a very precise sensing of T (with an error of less than 1K).
+A frequency generator takes care of the AC current input, with a \ac{RMS} voltage $V_{RMS} = 0.1 \text{V}$, while temperature is controlled using a Dewar flask containing liquid nitrogen, and resistances that are heated depending on the wanted temperature. The temperature of the sample is then measured using a platinum resistance thermometer, which allows for a very precise sensing of T (with an error of less than 1K).
 
 
 Proper attention must be given to the connection between the sample and the \ac{BDS} setup. This is achieved by using copper/gold terminals that are secured to the aluminum surface of the capacitor plates with screws, ensuring firm contact with the glass slide. Careful attention is given to ensure that the resistance is less than $2 \text{\Omega}$ across the plate and the \ac{BDS} terminals, and $> 20 \text{M\Omega}$ between the two plates (otherwise it would be counted as a shorted capacitor).
@@ -365,120 +465,11 @@ The final dielectric spectra are plotted in Figures \ref{300tpd}, \ref{110tpd}, 
 \begin{subfigure}[t]{.5\textwidth}
   \centering
   \includegraphics[scale = 0.46]{pics/Poly-TPD_300nm_derivative_eps_prime.pdf}
-  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
+  \caption{derivative of $\epsilon^\prime$ vs. $f$}
   %\label{fig:300tpdder}
 \end{subfigure}
-\caption{300nm Poly-TPD thin film, complex dielectric function and derivative of the real part as a function of frequency at different temperatures (plotted once every 30 kelvin for clarity).}
+\caption{200nm Poly-TPD thin film, complex dielectric function and derivative of the real part as a function of frequency at different temperatures (plotted once every 30 kelvin for clarity).}
   \label{300tpd}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-TPD_110nm_epsilon_double_prime_plot.pdf}
-  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
-  \label{fig:sub1}
-\end{subfigure}%
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-TPD_110nm_derivative_eps_prime.pdf}
-  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
-\end{subfigure}
-\caption{110nm Poly-TPD thin film}
-  \label{110tpd}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-TPD_24nm_epsilon_double_prime_plot.pdf}
-  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
-  \label{fig:sub1}
-\end{subfigure}%
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-TPD_24nm_derivative_eps_prime.pdf}
-  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
-  \label{fig:sub2}
-\end{subfigure}
-\caption{24nm Poly-TPD thin film}
-  \label{24tpd}
-\end{figure}
-
-
-\begin{figure}[!htb]
-\centering
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-TPD_8nm_epsilon_double_prime_plot.pdf}
-  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
-  \label{fig:sub1}
-\end{subfigure}%
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-TPD_8nm_derivative_eps_prime.pdf}
-  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
-  \label{fig:sub2}
-\end{subfigure}
-\caption{8nm Poly-TPD thin film}
-  \label{8tpd}
-\end{figure}
-
-
-\begin{figure}[!htb]
-\centering
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_320nm_epsilon_double_prime_plot.pdf}
-  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
-  \label{fig:sub1}
-\end{subfigure}%
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_320nm_derivative_eps_prime.pdf}
-  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
-  \label{fig:sub2}
-\end{subfigure}
-\caption{320nm Poly-Bisphenol thin film}
-  \label{320bis}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_43nm_epsilon_double_prime_plot.pdf}
-  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
-  \label{fig:sub1}
-\end{subfigure}%
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_43nm_derivative_eps_prime.pdf}
-  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
-  \label{fig:sub2}
-\end{subfigure}
-\caption{43nm Poly-Bisphenol thin film}
-  \label{43bis}
-\end{figure}
-
-\begin{figure}[!htb]
-\centering
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_14nm_epsilon_double_prime_plot.pdf}
-  \caption{$\epsilon^{\prime\prime}$ vs. $f$}
-  \label{fig:sub1}
-\end{subfigure}%
-\begin{subfigure}[t]{.5\textwidth}
-  \centering
-  \includegraphics[scale = 0.46]{pics/Poly-Bisphenol_14nm_derivative_eps_prime.pdf}
-  \caption{$-\frac{\pi}{2}\frac{d\epsilon^{\prime}}{d\left(\ln \left( \omega \right)   \right) }$ vs. $f$}
-  \label{fig:sub2}
-\end{subfigure}
-\caption{14nm Poly-Bisphenol thin film}
-  \label{14bis}
 \end{figure}
 
 \subsection{Qualitative Observations}
@@ -486,7 +477,7 @@ A quick overview at the obtained spectra brings one to notice the following trai
 \begin{itemize}
 	\item{The derivative plot is generally  more helpful in identifying the occurring peaks, which are more pronounced with respect to the $\epsilon^{\prime\prime}$ plot. This happens because of the removal of Ohmic conductivity, as discussed earlier.} %todo maybe refer to discussion
 	\item{At low temperature, the plots become more imprecise, probably due to a combination of the electronic oscillations and computation artifacts in the case of the derivative. In some cases, a spline interpolation was used to make the data more suitable for the subsequent fitting.}
-	\item{Thinner films generally exhibit a breakdown (i.e. shorting) at lower temperatures, although not always (as was the case of the 320nm Poly-Bisphenol film). This is consistent with the expectation that higher temperatures facilitate the penetration of the aluminum layers in the polymer, which becomes more conductive and eventually shorted. Also the thermal expansion of aluminum might be playing a role, though it should only be relevant for the thinner films, as its range of action is $\approx 5 \text{nm}$}.
+	\item{Thinner films generally exhibit a breakdown (i.e. shorting) at lower temperatures, although not always (as was the case of the 320nm Poly-Bisphenol film). This is consistent with the expectation that higher temperatures facilitate the penetration of the aluminum layers in the polymer, which becomes more conductive and eventually leads to a short circuit. Also the thermal expansion of aluminum might be playing a role, though it should only be relevant for the thinner films, as its range of action is $\approx 5 \text{nm}$}.
 \end{itemize}
 
 
@@ -503,9 +494,165 @@ A quick overview at the obtained spectra brings one to notice the following trai
 
 
 \section{Fitting of the Data}
+The derivative of $\epsilon^{\prime}$ was then fit using Python according to Equation \ref{eq:der_eps}, for each temperature value every 10K, in a range where the data was reasonably clean (i.e. did not contain too much noise).
+One example of such fitted plot is shown below for the 200nm Poly-TPD (the other ones can be found in the Appendix).
+
+
+
+
+
+
+
 \section{Discussion about the Obtained Parameters}
 \subsection{Relaxation Times}
+The relaxation time $\tau$ is a parameter of interest that we draw from the HN function fitting. We will now discuss the retrieved $\tau$'s for the different polymers.
+\subsubsection{Poly-TPD}
+Three relaxation processes are visible in the spectra of this polymer, which were thus fit with three independent HN functions, named HN1,2,3 from lowest frequency to highest. It was interesting to note that these relaxation times do not always depend on thickness.
+This was the case for $\tau_{\text{HN1}}$, in Figure \ref{tpdhn1}, for which there is a coincidence (up to some noise) of the relaxation times for different thicknesses.
+
+A different situation occurs for $\tau_{\text{HN2}}$, which instead shows a clear thickness dependence: for low thicknesses, $\tau_{\text{HN2}}$ is much smaller than the higher counterparts. Moreover, it is reasonable to believe that a saturation may occur for very thick films (bulk), as the difference between the $\tau$'s becomes much smaller when going from the 110nm to 200nm film, than from 8nm to 24nm, as seen in Figure \ref{tpdhn2}.
+
+The high frequency relaxation times modeled by the HN3 function are plotted in Figure \ref{tpdhn3}, and also show a thickness dependence, but there's an overlap between the 24nm and 110nm that is not immediately explainable if not by fitting errors. Indeed, since this third peak is generally broader for all spectra, there is greater chance of the parameters being not as clearly definable as for the previous, less wide peaks.
+
+\begin{figure}[t]%{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/taus/Poly-TPD_tau_max_HN1_vs_1000_over_T.pdf}
+  \caption{Relaxation times of the first relaxation process (i.e. obtained from the HN1 function) occurring in Poly-TPD at different thicknesses. This process seems to not depend on thickness and the different values of tau were ascribed to fitting error/noise.}
+  \label{tpdhn1}
+\end{figure}%
+
+\begin{figure}[t]%{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/taus/Poly-TPD_tau_max_HN2_vs_1000_over_T.pdf}
+  \caption{Relaxation times of the second relaxation process (i.e. obtained from the HN2 function) occurring in Poly-TPD at different thicknesses. This relaxation process suggests a thickness dependence which is discussed in the following.}
+  \label{tpdhn2}
+\end{figure}%
+
+\begin{figure}[t]%{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/taus/Poly-TPD_tau_max_HN3_vs_1000_over_T.pdf}
+  \caption{Relaxation times of the third relaxation process (i.e. obtained from the HN3 function) occurring in Poly-TPD at different thicknesses. This relaxation process also looks to have a thickness dependence, although not as clear as the second relaxation process. }
+  \label{tpdhn3}
+\end{figure}%
+
+\subsubsection{Poly-Bisphenol}
+
+The low-frequency relaxation times are plotted in Figure \ref{bishn1}, and look like being thickness-independent, as with Poly-TPD. In this case, the 43nm measurement was deemed inaccurate because, as seen in e.g. Figure \ref{43nm_500K}, the first peak occurs outside of the spectrum, and it's difficult to pinpoint the exact $\tau$ from just fitting.
+For the 14nm and 320nm, where this doesn't occur (at least at higher temperatures), the correspondence is much more apparent.
+
+The second process (Figure \ref{bishn2}) is utterly thickness dependent, and we note a behaviour similar as for Poly-TPD: lower relaxation time for lower thickness, and vice versa. The 2nd peak for the 14nm film, as seen in \ref{14_450}, was very much hidden by the other peaks, and not strongly visible, which is why it changes so abruptly with respect to the other ones. Still, the main difference between bulk and thin film is well-defined.
+
+Similarly as before, the high frequency (HN3) process has a somewhat thickness-dependent relaxation time, but the relationship is again nontrivial, as seen in Figure \ref{bishn3}. Further experimentation is deemed necessary to better understand this behaviour.
+
+\begin{figure}[t]%{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/taus/Poly-Bisphenol_tau_max_HN1_vs_1000_over_T.pdf}
+  \caption{Relaxation times of the first relaxation process (i.e. obtained from the HN1 function) occurring in Poly-Bisphenol at different thicknesses. This process appears to depend on thickness in a not-immediately-clear way. Further research may be needed for understanding this fully.}
+  \label{bishn1}
+\end{figure}%
+
+\begin{figure}[t]%{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/taus/Poly-Bisphenol_tau_max_HN2_vs_1000_over_T.pdf}
+  \caption{Relaxation times of the second relaxation process (i.e. obtained from the HN2 function) occurring in Poly-Bisphenol at different thicknesses. This relaxation process has a clear thickness dependence and is discussed in the following.}
+  \label{bishn2}
+\end{figure}%
+
+\begin{figure}[t]%{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.5]{pics/taus/Poly-Bisphenol_tau_max_HN3_vs_1000_over_T.pdf}
+  \caption{Relaxation times of the third relaxation process (i.e. obtained from the HN3 function) occurring in Poly-Bisphenol at different thicknesses. It is still not clear whether the thickness correlation has a physical meaning or is simply due to e.g. errors in the fit.}
+  \label{bishn3}
+\end{figure}%
+
 \subsubsection{VFT fit of the relaxation times}
-\subsubsection{Discussion and Comparison with other Polymers in Literature}
-\subsection{Dielectric strengths (Delta Epsilon)}
-\subsection{beta/gamma?}
+To interpret the relaxation times, we make use of the \ac{VFT} equation, as defined earlier. The fitting of the $\tau_{\text{HN2}}$ functions at different thicknesses is shown in Figure \ref{vfttpd} for Poly-TPD and Figure \ref{vftbis} for Poly-Bisphenol, and the parameters are represented in Tables \ref{tab:fitting-parameters-ptpd} and \ref{tab:fitting-parameters-bisphenol}, respectively.
+% get glass transition temp
+Genrally speaking, an increase (in absolute value) with thickness seems to correlate all of the obtained parameters.
+
+Of particular interest is then computing the GTT, which we define as the temperature at which $\tau$ is equal to 10s.  There is actually a debate on whether this definition is reliable or not, and some studies often define the GTT as T for $\tau = \text{100s}$. Nonetheless, in this work, the former definition was chosen, as the resulting $T_g$ values resembled more closely the actual values from \ac{DSC} experiments. %cite studies
+Indeed, %todo cite studies
+
+\begin{figure}[t]%{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.5]{pics/vft/Poly-TPD_tau_max_HN2_VFT_fit_all_thicknesses.pdf}
+  \caption{}
+  \label{vfttpd}
+\end{figure}%
+
+\begin{figure}[t]%{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/vft/Poly-Bisphenol_tau_max_HN2_VFT_fit_all_thicknesses.pdf}
+  \caption{}
+  \label{vftbis}
+\end{figure}%
+
+
+\begin{table}[h]
+    \caption{Fitting Parameters for Poly-TPD at Various Thicknesses}
+    \label{tab:fitting-parameters-ptpd}
+    \begin{center}
+    \begin{tabular}{@{}cccccc@{}}
+    \toprule
+    Thickness (nm) & log10($\tau_\infty$) & DT & T0 (K) & $T_g$ (T at $\tau$ = 10s (K)) \\ \midrule
+    8   & -15.8875 & -147223.1348 & 0.0342 & 298.47 \\
+    24  & -11.2485 & -248118.7770 & 0.0152 & 308.11 \\
+    110 & -9.6441 & -292768.5995 & 0.0124 & 340.89 \\
+    200 & -11.2431 & -659454.5989 & 0.0068 & 364.63 \\
+    \bottomrule
+    \end{tabular}
+    \end{center}
+\end{table}
+
+\begin{table}[h]
+    \caption{Fitting Parameters for Poly-Bisphenol at Various Thicknesses. The 14nm sample is likely unreliable, as discussed in the present section, and was marked in red.}
+    \label{tab:fitting-parameters-bisphenol}
+    \begin{center}
+    \begin{tabular}{@{}cccccc@{}}
+    \toprule
+    Thickness (nm) & log10($\tau_\infty$) & DT & T0 (K) & $T_g$ (T at $\tau$ = 10s (K)) \\ \midrule
+    320 & -5.2618 & -2.4972 & 253.1543 & 354.11 \\
+    43  & -7.0539 & -6.2055 & 160.1424 & 283.53 \\
+    \textcolor{red}{14}  & \textcolor{red}{-6.0000} & \textcolor{red}{-0.9118} & \textcolor{red}{317.1379} & \textcolor{red}{358.45} \\ % Marked entry
+    \bottomrule
+    \end{tabular}
+    \end{center}
+\end{table}
+
+%\subsubsection{Discussion and Comparison with other Polymers in Literature}
+
+% compare poly-bisph only?
+\subsection{$\alpha$ and $\beta\text{-Relaxation}$ and Dielectric strengths $\Delta\epsilon$}
+Another useful plot for the determination of the temperature at which relaxation processes occur is fixing one frequency and plotting $\epsilon^{\prime\prime}$ versus T. This was done for the bulk films of both polymers at a frequency of about 1kHz and is shown in Figure \ref{epsvsttpd} (Poly-TPD) and Figure \ref{epsvstbisph} (Poly-Bisphenol).
+As noticeable, there are no main peaks in the measured temperature range, which suggests that a greater range might be needed to show the relaxation processes. Yet, in the case of Poly-Bisphenol, a peak appears at the very edge of the spectrum, around T=450K, which corresponds to the $\alpha\text{-relaxation}$ process. This same temperature value is also confirmed in the study, and can be used as a double check for the accuracy of the gathered data. %todo insert reference.
+
+No literature is known at the time of writing for the case of Poly-TPD, but it was considered appropriate to also show the plot, which, if anything, demonstrates that the $\alpha\text{-relaxation}$ occurs above 530K, and the $\beta\text{-relaxation}$ below 250K.
+
+\begin{figure}[!htb]
+\centering
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/misc/log_epsilon_double_prime_vs_temperature_tpd_9.7e+02Hz.pdf}
+  \caption{Poly-TPD, 200nm film}
+  \label{epsvsttpd}
+\end{subfigure}%
+\begin{subfigure}[t]{.5\textwidth}
+  \centering
+  \includegraphics[scale = 0.46]{pics/misc/log_epsilon_double_prime_vs_temperature_bisphenol_9.7e+02Hz.pdf}
+  \caption{Poly-Bisphenol, 320nm film}
+  \label{epsvstbisph}
+\end{subfigure}
+\caption{Comparison of $\epsilon^{\prime\prime}$ vs. T for bulk Poly-TPD and Poly-Bisphenol films at $f \approx 1\text{kHz}$.}
+\label{epsvstcomparison}
+\end{figure}
+%just plot stuff
+%\subsection{beta/gamma?}
+
+
+\section{Revisiting the Glass Transition Temperature Debate}
+
+The results from our data analysis provide an insight into the ongoing debate regarding the \ac{GTT} in thin films compared to bulk materials. Specifically, our findings indicate a noticeable difference between the \(T_g\) of thin and thick films in both Poly-TPD and Poly-Bisphenol. This disparity can be attributed to the inherent stiffness of the polymer chains, which for these two polymers is particularly prominent.
+
+Indeed, given the stiff nature of these polymers, the \(T_g\) observed in the bulk is not directly translatable to the \(T_g\) in thin films. The confined geometry of the thin films induces additional relaxation processes that are not present in the bulk material. These processes likely arise from the altered mobility and constrained dynamics of the polymer chains near the interfaces, leading to a deviation in the \(T_g\) compared to bulk samples.
+
+This observed difference underscores the importance of accounting for these additional relaxation mechanisms when analyzing and predicting the behavior of thin polymer films. The presence of such relaxation processes in thin films suggests that they are governed by dynamics distinct from those of the bulk, necessitating a more nuanced approach to understanding the glass transition and associated thermal properties in nanoconfined systems.
