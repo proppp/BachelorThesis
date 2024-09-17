@@ -231,6 +231,7 @@ The $\beta\text{-Relaxation}$ is a secondary relaxation process that occurs at t
 
 The $\beta\text{-Relaxation}$ is often noticeable by the Arrhenius behavior when plotting the beta-relaxation time versus temperature. This behavior is described by the Arrhenius Equation \cite{zhao2023}:
 \begin{equation}
+\label{arreq}
 \tau_{\beta} = \tau_{\infty} \exp\left(\frac{E}{k_B T}\right)
 \end{equation}
 where \(E\) is the activation energy required for the relaxation process to occur, and \(k_B\) is the Boltzmann constant.
@@ -240,13 +241,21 @@ where \(E\) is the activation energy required for the relaxation process to occu
 Thin films, (i.e. layers of material from nanometers to micrometers thick), are important for the most disparate applications, and thus the subject of many scientific studies. A prominent topic of discussion in the study of thin films is the glass transition temperature \(T_g\). There is an ongoing debate about whether \(T_g\) is altered in thin films compared to bulk materials \cite{serghei}. This debate arises from numerous studies using techniques such as ellipsometry, neutron and X-ray reflectivity, \ac{PALS}, and thermal probe measurements. Studies have reported both increases and decreases in \(T_g\), which hints that the interaction between the polymer and its boundaries can significantly affect its thermal properties. For instance, freely standing films of high molecular weight polystyrene have been studied, with some theories proposing that additional relaxation modes, such as a "sliding motion" of polymer chains near free surfaces, may be responsible for these observed variations \cite{FUJITA}. This topic remains under active investigation, with theoretical models and computer simulations continuing to explore the underlying mechanisms affecting the glass transition in thin films \cite{kremer2003}.
 \subsection{Dynamics in Thin Films}
 
-The dynamics of polymers in thin films can differ significantly from those in the bulk due to a variety of factors, including chain stiffness, film thickness, and interactions at the interface \cite{LI2021101431}. In thin films, especially those with thicknesses on the order of a few nanometers, the confinement effects and proximity to interfaces can lead to much altered molecular dynamics.
+The dynamics of polymers in thin films can differ significantly from those in the bulk due to a variety of factors, including chain stiffness, film thickness, and interactions at the interface \cite{LI2021101431}. In thin films, especially those with thicknesses on the order of a few nanometers, the confinement effects and proximity to interfaces can lead to much altered molecular dynamics (Figure \ref{dyn}).
 
 Chain stiffness plays a major role in this: while the dynamics in bulk is largely governed by the intrinsic flexibility or stiffness of the polymer chains, thin films have a reduced dimensionality that can lead to restricted chain mobility, particularly for stiffer polymers. The constraints imposed by the film's boundaries can limit the degree of conformational changes that the polymer chains can undergo, thereby modifying the relaxation processes and overall dynamics.
 
 Another important effect that is accentuated in thin films are interface interactions, because the surface-to-volume ratio is higher, making the influence of the substrate or surrounding medium significant. For polymers with long chain segments, the interface can induce orientation or ordering effects, which are not typically present in the bulk material. %The nature of the polymer-substrate interaction (e.g., strong or weak adhesion) can lead to different dynamic behaviors, such as enhanced mobility near a free surface or suppressed motion near a strongly interacting substrate.
 
-This can lead to the emergence of new relaxation modes or the suppression of bulk relaxation processes. For instance, the sliding motion of polymer chains along their contour, proposed for freely standing films of polystyrene, is an example of how thin film dynamics can introduce mechanisms not observed in bulk polymers \cite{winkler2021}.
+This can lead to the emergence of new relaxation modes or the suppression of bulk relaxation processes. For instance, the sliding motion of polymer chains along their contour, proposed for freely standing films of polystyrene, is an example of how thin film dynamics can introduce mechanisms not observed in bulk polymers \cite{yin2015}.
+
+\begin{figure}[htp!]
+    \centering
+    \hspace*{-0.8cm}
+    \includegraphics[scale = 1.9]{pics/images_medium_ma-2015-01259n_0006.png}
+    \caption{Example of thickness-dependent properties of polymer films, such as $T_g$. Taken from \cite{yin2015}}
+    \label{dyn}
+\end{figure}
 
 
 \subsection{Deconvolution and Gradient of Relaxation Time in Thin Films}
@@ -363,24 +372,24 @@ Annealing is useful for improving the film's uniformity and adhesion to the subs
 After this process, aluminum was evaporated a second time in strips perpendicular to the earlier ones, completing the fabrication of the capacitors (Figure \ref{draw3}).
 
 
-%%todo uncomment these lines at the end
-%\begin{figure}[!htb]
-%\minipage{0.22\textwidth}
-%  \includegraphics[width=\linewidth]{pics/drawing1.png}
-%  \caption{Deposition of the aluminum on the glass substrate}\label{fig:drawing1}
-%  \label{draw1}
-%\endminipage\hfill
-%\minipage{0.22\textwidth}
-%  \includegraphics[width=\linewidth]{pics/drawing2.png}
-%  \caption{Spin-coating of the polymer solution}\label{fig:drawing2}
-%  \label{draw2}
-%\endminipage\hfill
-%\minipage{0.22\textwidth}%
-%  \includegraphics[width=\linewidth]{pics/drawing3.png}
-%  \caption{Second deposition of aluminum, perpendicularly on top}\label{fig:drawing3}
-%  \label{draw3}
-%\endminipage
-%\end{figure}
+%todo uncomment these lines at the end
+\begin{figure}[!htb]
+\minipage{0.22\textwidth}
+  \includegraphics[width=\linewidth]{pics/drawing1.png}
+  \caption{Deposition of the aluminum on the glass substrate}\label{fig:drawing1}
+  \label{draw1}
+\endminipage\hfill
+\minipage{0.22\textwidth}
+  \includegraphics[width=\linewidth]{pics/drawing2.png}
+  \caption{Spin-coating of the polymer solution}\label{fig:drawing2}
+  \label{draw2}
+\endminipage\hfill
+\minipage{0.22\textwidth}%
+  \includegraphics[width=\linewidth]{pics/drawing3.png}
+  \caption{Second deposition of aluminum, perpendicularly on top}\label{fig:drawing3}
+  \label{draw3}
+\endminipage
+\end{figure}
 
 \section{Atomic Force Microscopy}
 
@@ -444,7 +453,7 @@ That done, the sample holder is placed in the setup and the measurement can be s
 \chapter{Results \& Discussion}
 
 \section{Obtained Dielectric Spectra}
-The dielectric spectra for Poly-TPD and Poly-Bisphenol were thus obtained, and the numerical derivative was then computed (as in Figure \ref{300tpd}, and in Appendix B). A quick overview brings one to notice the traits discussed in the following.
+The dielectric spectra for Poly-TPD and Poly-Bisphenol were thus obtained, and the numerical derivative was then computed (as in Figure \ref{300tpd}, and in Appendix B). A quick overview brings one to notice the traits discussed in the present section.
 %\begin{figure}[htp!]
 %    \centering
 %    \hspace*{-0.8cm}
@@ -529,7 +538,7 @@ The high frequency relaxation times modeled by the HN3 function (Figure \ref{tpd
 \begin{figure}[t]%{.5\textwidth}
   \centering
   \includegraphics[scale = 0.46]{pics/vftfits/Poly-TPD_tau_HN2_VFT_fit_all_thicknesses.pdf}
-  \caption{Relaxation times of the second relaxation process (i.e. obtained from the HN2 function) occurring in Poly-TPD at different thicknesses. This relaxation process suggests a thickness dependence which is discussed in the following.}
+  \caption{Relaxation times of the second relaxation process (i.e. obtained from the HN2 function) occurring in Poly-TPD at different thicknesses. This relaxation process suggests a thickness dependence which is discussed in the present section.}
   \label{tpdhn2}
 \end{figure}%
 
@@ -538,14 +547,14 @@ The low-frequency relaxation times (Figure \ref{bishn1}) look like being thickne
 ), and it's difficult to pinpoint the exact $\tau$ from just fitting.
 For the 14nm and 320nm, where this doesn't occur (at least at higher temperatures), the correspondence is much more apparent.
 
-The second process (Figure \ref{bishn2}) is utterly thickness dependent, and a behaviour similar as for Poly-TPD is noted: lower relaxation time for lower thickness, and vice versa. The 2nd peak for the 14nm film, as seen in \ref{14_450}, was very much hidden by the other peaks, and not strongly visible, which is why it changes so abruptly with respect to the other ones. Still, the main difference between bulk and thin film is well-defined.
+The second process (Figure \ref{bishn2}) is utterly thickness dependent, and a behaviour similar as for Poly-TPD is noted: lower relaxation time for lower thickness, and vice versa. The 2nd peak for the 14nm film (Figure \ref{14_450}) was very much hidden by the other peaks, and not strongly visible, which is why it changes so abruptly with respect to the other ones. Still, the main difference between bulk and thin film is well-defined.
 
 Similarly as before, the high frequency (HN3) process has a somewhat thickness-dependent relaxation time, but the relationship is again nontrivial (Figure \ref{bishn3}). Further experimentation is deemed necessary to better understand this behaviour.
 
 \begin{figure}[t]%{.5\textwidth}
   \centering
   \includegraphics[scale = 0.46]{pics/vftfits/Poly-Bisphenol_tau_HN2_VFT_fit_all_thicknesses.pdf}
-  \caption{Relaxation times of the second relaxation process (i.e. obtained from the HN2 function) occurring in Poly-Bisphenol at different thicknesses. This relaxation process has a clear thickness dependence and is discussed in the following.}
+  \caption{Relaxation times of the second relaxation process (i.e. obtained from the HN2 function) occurring in Poly-Bisphenol at different thicknesses. This relaxation process has a clear thickness dependence which confirms the influence of chain stiffness on properties such as relaxation time.}
   \label{bishn2}
 \end{figure}%
 
@@ -556,11 +565,11 @@ To interpret the relaxation times, the \ac{VFT} equation is made use of, as defi
 Generally speaking, an increase (in absolute value) with thickness seems to correlate all of the obtained parameters.
 
 Of particular interest is then computing the \ac{$T_g$}, which is defined as the temperature at which $\tau$ is equal to 10s.  There is actually a debate on whether this definition is reliable or not, and some studies often define the \ac{$T_g$} as T for $\tau = \text{100s}$. Nonetheless, in this work, the former definition was chosen, as the resulting \ac{$T_g$} values resembled more closely the actual values from the manifacturer \ac{DSC} experiments. %cite studies
-Indeed, %todo cite studies
+%Indeed, %todo cite studies
 
 
 \begin{table}[h]
-    \caption{Fitting Parameters for Poly-TPD at different thicknesses. In this case, since $T0 \approx 0$, the fitting reduces to Arrhenius behaviour.}
+	\caption{Fitting Parameters for Poly-TPD at different thicknesses. In this case, since $T0 \approx 0$, the fitting reduces to Arrhenius behaviour (Equation \ref{arreq}).}
     \label{tab:fitting-parameters-ptpd}
     \begin{center}
     \begin{tabular}{@{}cccccc@{}}
@@ -595,7 +604,7 @@ Indeed, %todo cite studies
 %\subsubsection{Discussion and Comparison with other Polymers in Literature}
 
 % compare poly-bisph only?
-\subsection{$\alpha$ and $\beta\text{-Relaxation}$ and Dielectric strengths $\Delta\epsilon$}
+\subsection{$\alpha$ and $\beta\text{-Relaxation}$}
 Another useful plot for the determination of the temperature at which relaxation processes occur is fixing one frequency and plotting $\epsilon^{\prime\prime}$ versus T. This was done for the bulk films of both polymers at a frequency of about 1kHz (Figure \ref{epsvsttpd}, Poly-TPD and Figure \ref{epsvstbisph}, Poly-Bisphenol).
 As noticeable, there are no main peaks in the measured temperature range, which suggests that a greater range might be needed to show the relaxation processes. Yet, in the case of Poly-Bisphenol, a peak appears at the very edge of the spectrum, around T=450K, which corresponds to the $\alpha\text{-relaxation}$ process. This same temperature value is also confirmed in the study, and can be used as a double check for the accuracy of the gathered data. %todo insert reference.
 
@@ -628,4 +637,4 @@ The results from the data analysis provide an insight into the ongoing debate re
 
 Indeed, given the stiff nature of these polymers, the \(T_g\) observed in the bulk is not directly translatable to the \(T_g\) in thin films. The confined geometry of the thin films induces additional relaxation processes that are not present in the bulk material. These processes likely arise from the altered mobility and constrained dynamics of the polymer chains near the interfaces, leading to a deviation in the \(T_g\) compared to bulk samples.
 
-This observed difference underscores the importance of accounting for these additional relaxation mechanisms when analyzing and predicting the behavior of thin polymer films. The presence of such relaxation processes in thin films suggests that they are governed by dynamics distinct from those of the bulk, necessitating a more nuanced approach to understanding the glass transition and associated thermal properties in nanoconfined systems.
+The observed difference demonstrates the utter importance of accounting for these nontrivial relaxation mechanisms when analyzing and predicting the behavior of thin polymer films. The presence of such relaxation processes in thin films suggests that they are governed by dynamics distinct from those of the bulk, necessitating a more nuanced approach to understanding the glass transition and associated thermal properties in nanoconfined systems.

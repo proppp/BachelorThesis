@@ -38,7 +38,7 @@
 \contentsline {subsection}{\numberline {3.2.3}Spin-Coating of the Solution}{13}{}%
 \contentsline {subsection}{\numberline {3.2.4}Heating and Annealing}{14}{}%
 \contentsline {section}{\numberline {3.3}Atomic Force Microscopy}{14}{}%
-\contentsline {section}{\numberline {3.4}Dielectric Spectroscopy}{14}{}%
+\contentsline {section}{\numberline {3.4}Dielectric Spectroscopy}{15}{}%
 \contentsline {chapter}{\numberline {4}Results \& Discussion}{17}{}%
 \contentsline {section}{\numberline {4.1}Obtained Dielectric Spectra}{17}{}%
 \contentsline {subsection}{\numberline {4.1.1}Qualitative Observations}{17}{}%
@@ -48,7 +48,7 @@
 \contentsline {subsubsection}{Poly-TPD}{18}{}%
 \contentsline {subsubsection}{Poly-Bisphenol}{19}{}%
 \contentsline {subsubsection}{VFT fit of the relaxation times}{20}{}%
-\contentsline {subsection}{\numberline {4.3.2}$\alpha $ and $\beta \text {-Relaxation}$ and Dielectric strengths $\Delta \epsilon $}{20}{}%
+\contentsline {subsection}{\numberline {4.3.2}$\alpha $ and $\beta \text {-Relaxation}$}{20}{}%
 \contentsline {section}{\numberline {4.4}Revisiting the Glass Transition Temperature Debate}{21}{}%
 \contentsline {chapter}{\numberline {5}Conclusion}{23}{}%
 \contentsline {chapter}{\numberline {A}AFM Data}{29}{}%
