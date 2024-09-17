@@ -1,5 +1,5 @@
 
-\documentclass[a4paper]{book}
+\documentclass[a4paper, english]{book}
 
 \usepackage{geometry} % Title page needs its own margins.
 
@@ -10,18 +10,22 @@
 %\usepackage{fontspec}
 \usepackage{polyglossia}
 %\setmainlanguage[babelshorthands=true]{english}
+\setmainlanguage{english}
 %\usepackage[T1]{fontenc}    % European character set (special characters, etc.)
 \usepackage[bitstream-charter]{mathdesign} % Modern, serif, and objective font
 %\usepackage[utf8]{inputenc} % UTF-8 input character set
-
+%\usepackage[section]{placeins}
 \usepackage{xstring}        % Test/compare (sub)strings
 
 \usepackage{totcount}       % Count page numbers, figures, etc.
 
 \usepackage{siunitx}        % SI units
-\usepackage{natbib}         % Scientific citations
+%\usepackage{natbib}         % Scientific citations
 \usepackage[printonlyused]{acronym} % Abbreviations + abbreviation directory
 \usepackage{blindtext}      % Filler text for testing
+
+\usepackage[language=english, backend=biber, style=numeric, maxnames=99]{biblatex}
+\addbibresource{bibliography/bibliography.bib}
 
 \usepackage{pdfpages}       % Include PDFs
 
@@ -43,6 +47,7 @@
 \usepackage{subfig}
 \usepackage{svg}
 
+\usepackage{etoolbox}
 \usepackage{gensymb}
 \begin{document}
 %% Document
@@ -52,19 +57,30 @@
 \input{official/titelblatt_pretty}
 
 %% Line number for the table of contents, etc.
-\setcounter{page}{1}
-\pagenumbering{Roman}
+%\pagenumbering{Roman}
+
+% Modify the \frontmatter to not number any headings
+\apptocmd{\frontmatter}{%
+    \setcounter{secnumdepth}{-1}%
+}{}{}
+% Modify the \mainmatter to reset that
+\apptocmd{\mainmatter}{%
+    \setcounter{secnumdepth}{2}%
+}{}{}
 
 %% TOC
 \tableofcontents
 \newpage
 
-\pagenumbering{arabic}
+%\pagenumbering{arabic}
 %% Bibliographic Description
+\frontmatter
 \input{content/head/bibliographische_beschreibung}
 \input{content/head/abkuerzungsverzeichnis}
 \newpage
 
+\setcounter{page}{1}
+\mainmatter
 %% Main Part
 \input{content/main/main}
 
@@ -76,5 +92,4 @@
 \input{content/tail/literaturverzeichnis}
 %% Appendix
 \input{content/tail/appendix}
-
 \end{document}
